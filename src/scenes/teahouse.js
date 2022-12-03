@@ -13,27 +13,27 @@ class TeaHouseScene extends Phaser.Scene {
     this.movables = [
       {
         obj: this.add.container(0, 0, [this.add.image(0, 0, 'bush').setOrigin(0, 0)]),
-        str: 0.2,
+        str: 0.6,
       },
       {
         obj: this.add.container(0, 0, [this.add.image(0, 0, 'pillars').setOrigin(0, 0)]),
-        str: 0.4,
+        str: 0.3,
       },
       {
         obj: this.add.container(0, 0, [this.add.spine(width * 0.5, height, 'enna')]),
-        str: 0,
+        str: 0.1,
       },
       {
-        obj: this.add.container(0, 0, [this.add.image(0, -height * 0.1, 'teaset').setOrigin(0, 0)]),
+        obj: this.add.container(0, 0, [this.add.image(0, 0, 'teaset').setOrigin(0, 0)]),
         str: -0.2,
       },
       {
-        obj: this.add.container(0, 0, [this.add.image(0, -height * 0.1, 'ap2').setOrigin(0, 0)]),
-        str: -0.3,
+        obj: this.add.container(0, 0, [this.add.image(0, 0, 'ap2').setOrigin(0, 0)]),
+        str: -0.4,
       },
       {
-        obj: this.add.container(0, 0, [this.add.image(0, height * 0.1, 'ap1').setOrigin(0, 0)]),
-        str: -0.4,
+        obj: this.add.container(0, 0, [this.add.image(0, 0, 'ap1').setOrigin(0, 0)]),
+        str: -0.6,
       },
     ];
 
