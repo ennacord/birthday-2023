@@ -1,0 +1,22 @@
+{
+"skeleton": { "hash": "y7oGwdSb76U", "spine": "3.8-from-4.0-from-4.1.17" },
+"bones": [
+	{ "name": "root" }
+],
+"slots": [
+	{ "name": "enna_table", "bone": "root", "attachment": "enna_table" }
+],
+"skins": [
+	{
+		"name": "default",
+		"attachments": {
+			"enna_table": {
+				"enna_table": { "x": -20.5, "y": 488.5, "width": 1961, "height": 979 }
+			}
+		}
+	}
+],
+"animations": {
+	"animation": {}
+}
+}

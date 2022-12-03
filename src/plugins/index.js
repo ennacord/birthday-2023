@@ -10,5 +10,6 @@ export default {
     },
   ],
   scene: [
+    { key: 'SpinePlugin', plugin: window.SpinePlugin, mapping: 'spine' }
   ],
 };
