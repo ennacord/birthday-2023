@@ -32,6 +32,7 @@ class TeaHouseScene extends Phaser.Scene {
         str: -0.4,
       },
       {
+        menu: true,
         obj: this.add.container(0, 0, [this.add.image(0, 0, 'ap1').setOrigin(0, 0)]),
         str: -0.6,
       },
@@ -40,10 +41,14 @@ class TeaHouseScene extends Phaser.Scene {
     this.input.on('pointermove', (pointer) => {
       const dx = pointer.x - centerX;
       const dy = pointer.y - centerY;
-      this.movables.forEach(({ obj, str }) => {
+      this.movables.forEach(({ menu, obj, str }) => {
         const newX = (dx * 0.05) * str;
         const newY = (dy * 0.03) * str;
-        obj.setPosition(newX, newY);
+        if (menu) {
+          obj.setPosition(0, newY - Math.max(newX * 10, -100));
+        } else {
+          obj.setPosition(newX, newY);
+        }
       });
     });
   }
