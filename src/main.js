@@ -1,7 +1,7 @@
 import './style.css';
 
 import Phaser from 'phaser';
-// import scene from './scenes';
+import scene from './scenes';
 import plugins from './plugins';
 
 // Phaser Game Instance
@@ -19,5 +19,5 @@ new Phaser.Game({
     height: 937,
   },
   plugins,
-  // scene,
+  scene,
 });
