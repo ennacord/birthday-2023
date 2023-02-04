@@ -6,11 +6,18 @@ import TeahouseScene from './teahouse';
 import SpineImportedJson from '../assets/spine/imported.json';
 import SpineImportedAtlas from '../assets/spine/imported.atlas?url';
 
-import ImageAp1 from '../assets/images/ap1.png';
+import SpineMenupeepJson from '../assets/spine/menupeep.json';
+import SpineMenupeepAtlas from '../assets/spine/menupeep.atlas?url';
+
+// import ImageAp1 from '../assets/images/ap1.png';
 import ImageAp2 from '../assets/images/ap2.png';
 import ImageBush from '../assets/images/bush.png';
 import ImagePillars from '../assets/images/pillars.png';
-import ImageTeaset from '../assets/images/teaset.png';
+// import ImageTeaset from '../assets/images/teaset.png';
+
+import ImageCake from '../assets/frames/cake.png';
+import ImagePot from '../assets/frames/pot.png';
+import ImageTray from '../assets/frames/tray.png';
 
 class IndexScene extends Phaser.Scene {
   preload() {
@@ -37,13 +44,18 @@ class IndexScene extends Phaser.Scene {
 
     // Spine
     this.load.spine('enna', SpineImportedJson, [SpineImportedAtlas], true);
+    this.load.spine('menupeep', SpineMenupeepJson, [SpineMenupeepAtlas], true);
 
     // Images
-    this.load.image('ap1', ImageAp1);
+    // this.load.image('ap1', ImageAp1);
     this.load.image('ap2', ImageAp2);
     this.load.image('bush', ImageBush);
     this.load.image('pillars', ImagePillars);
-    this.load.image('teaset', ImageTeaset);
+    // this.load.image('teaset', ImageTeaset);
+
+    this.load.image('cake', ImageCake);
+    this.load.image('pot', ImagePot);
+    this.load.image('tray', ImageTray);
 
     // Scenes
     this.scene.add('splash', SplashScene);
