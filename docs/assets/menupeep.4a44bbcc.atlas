@@ -1,0 +1,90 @@
+
+menupeep.png
+size: 2048, 1024
+format: RGBA8888
+filter: Linear, Linear
+repeat: none
+MenuPeep_ahoge
+  rotate: true
+  xy: 528, 11
+  size: 155, 201
+  orig: 155, 201
+  offset: 0, 0
+  index: -1
+MenuPeep_body
+  rotate: false
+  xy: 610, 416
+  size: 467, 599
+  orig: 467, 599
+  offset: 0, 0
+  index: -1
+MenuPeep_eyeClose
+  rotate: true
+  xy: 1079, 754
+  size: 261, 119
+  orig: 261, 120
+  offset: 0, 0
+  index: -1
+MenuPeep_eyeOpen
+  rotate: false
+  xy: 2, 11
+  size: 261, 155
+  orig: 261, 155
+  offset: 0, 0
+  index: -1
+MenuPeep_eyeSmile
+  rotate: false
+  xy: 265, 28
+  size: 261, 138
+  orig: 261, 154
+  offset: 0, 16
+  index: -1
+MenuPeep_handBack
+  rotate: false
+  xy: 1155, 310
+  size: 81, 120
+  orig: 82, 120
+  offset: 1, 0
+  index: -1
+MenuPeep_handFront
+  rotate: true
+  xy: 731, 2
+  size: 111, 127
+  orig: 111, 127
+  offset: 0, 0
+  index: -1
+MenuPeep_headWingBack
+  rotate: false
+  xy: 979, 47
+  size: 174, 367
+  orig: 174, 367
+  offset: 0, 0
+  index: -1
+MenuPeep_headWingFront
+  rotate: true
+  xy: 610, 115
+  size: 299, 367
+  orig: 299, 367
+  offset: 0, 0
+  index: -1
+MenuPeep_menu
+  rotate: false
+  xy: 2, 168
+  size: 606, 847
+  orig: 606, 847
+  offset: 0, 0
+  index: -1
+MenuPeep_wingBack
+  rotate: false
+  xy: 1079, 432
+  size: 110, 159
+  orig: 110, 159
+  offset: 0, 0
+  index: -1
+MenuPeep_wingFront
+  rotate: false
+  xy: 1079, 593
+  size: 136, 159
+  orig: 136, 159
+  offset: 0, 0
+  index: -1
