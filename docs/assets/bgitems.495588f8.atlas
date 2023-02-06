@@ -1,0 +1,130 @@
+
+bgitems1.png
+size: 2048, 2048
+format: RGBA8888
+filter: Linear, Linear
+repeat: none
+BG_Pillar1a
+  rotate: false
+  xy: 1203, 2
+  size: 831, 1923
+  orig: 831, 1923
+  offset: 0, 0
+  index: -1
+BG_Pillar4a
+  rotate: false
+  xy: 2, 2
+  size: 1199, 1923
+  orig: 1199, 1923
+  offset: 0, 0
+  index: -1
+
+bgitems2.png
+size: 2048, 2048
+format: RGBA8888
+filter: Linear, Linear
+repeat: none
+BG_Banner
+  rotate: 180
+  xy: 124, 2
+  size: 1105, 509
+  orig: 1105, 509
+  offset: 0, 0
+  index: -1
+BG_BannerLeft
+  rotate: 270
+  xy: 772, 1200
+  size: 404, 784
+  orig: 404, 784
+  offset: 0, 0
+  index: -1
+BG_BannerRight
+  rotate: true
+  xy: 2, 1231
+  size: 373, 819
+  orig: 373, 819
+  offset: 0, 0
+  index: -1
+BG_Flowers1
+  rotate: false
+  xy: 2, 1593
+  size: 193, 405
+  orig: 193, 405
+  offset: 0, 0
+  index: -1
+BG_Flowers2
+  rotate: true
+  xy: 600, 620
+  size: 652, 862
+  orig: 652, 862
+  offset: 0, 0
+  index: -1
+BG_Flowers3
+  rotate: false
+  xy: 2, 749
+  size: 689, 673
+  orig: 689, 673
+  offset: 0, 0
+  index: -1
+BG_Flowers4
+  rotate: 180
+  xy: 1248, 779
+  size: 723, 871
+  orig: 723, 871
+  offset: 0, 0
+  index: -1
+BG_Flowers5
+  rotate: true
+  xy: 894, 333
+  size: 536, 996
+  orig: 536, 996
+  offset: 0, 0
+  index: -1
+BG_Pillar1b
+  rotate: false
+  xy: 197, 1606
+  size: 290, 392
+  orig: 290, 392
+  offset: 0, 0
+  index: -1
+BG_Pillar2b
+  rotate: false
+  xy: 489, 1606
+  size: 290, 392
+  orig: 290, 392
+  offset: 0, 0
+  index: -1
+BG_Pillar3b
+  rotate: false
+  xy: 1073, 1605
+  size: 290, 393
+  orig: 290, 393
+  offset: 0, 0
+  index: -1
+BG_Pillar4b
+  rotate: false
+  xy: 781, 1606
+  size: 290, 392
+  orig: 290, 392
+  offset: 0, 0
+  index: -1
+
+bgitems3.png
+size: 2048, 2048
+format: RGBA8888
+filter: Linear, Linear
+repeat: none
+BG_Pillar2a
+  rotate: false
+  xy: 2, 2
+  size: 1019, 1923
+  orig: 1019, 1923
+  offset: 0, 0
+  index: -1
+BG_Pillar3a
+  rotate: false
+  xy: 1023, 2
+  size: 951, 1923
+  orig: 951, 1923
+  offset: 0, 0
+  index: -1
