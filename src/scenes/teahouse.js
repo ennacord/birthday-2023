@@ -7,7 +7,7 @@ class TeaHouseScene extends Phaser.Scene {
     const centerY = height * 0.5;
 
     const background = this.add.graphics();
-    background.fillStyle(0xfff8ff);
+    background.fillGradientStyle(0xcee0ed, 0xcee0ed, 0xffffff, 0xffffff);
     background.fillRect(0, 0, width, height);
 
     this.cameras.main.fadeIn(2000, 255, 247, 249);
@@ -47,9 +47,23 @@ class TeaHouseScene extends Phaser.Scene {
     // Movable layers for parallax
     this.movables = [
       {
-        origin: [-30, 0],
+        origin: [width * 0.5, height * 0.5],
         obj: this.add.container(0, 0, [
-          this.add.image(0, 0, 'bush').setScale(1.3).setOrigin(0, 0),
+          this.add.image(0, 0, 'cloud3').setScale(0.5),
+        ]),
+        str: 0.8,
+      },
+      {
+        origin: [width * 0.5, height * 0.5],
+        obj: this.add.container(0, 0, [
+          this.add.image(0, 0, 'cloud2').setScale(0.5),
+        ]),
+        str: 0.7,
+      },
+      {
+        origin: [width * 0.5, height * 0.5],
+        obj: this.add.container(0, 0, [
+          this.add.image(0, 0, 'cloud1').setScale(0.5),
         ]),
         str: 0.6,
       },

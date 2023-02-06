@@ -16,6 +16,9 @@ import SpineBgitemsAtlas from '../assets/spine/bgitems.atlas?url';
 import ImageBush from '../assets/images/bush.png';
 import ImagePillars from '../assets/images/pillars.png';
 
+import ImageCloud1 from '../assets/frames/cloud1.png';
+import ImageCloud2 from '../assets/frames/cloud2.png';
+import ImageCloud3 from '../assets/frames/cloud3.png';
 import ImageCake from '../assets/frames/cake.png';
 import ImagePot from '../assets/frames/pot.png';
 import ImageTray from '../assets/frames/tray.png';
@@ -47,6 +50,9 @@ class IndexScene extends Phaser.Scene {
     this.load.image('pillars', ImagePillars);
     // this.load.image('teaset', ImageTeaset);
 
+    this.load.image('cloud1', ImageCloud1);
+    this.load.image('cloud2', ImageCloud2);
+    this.load.image('cloud3', ImageCloud3);
     this.load.image('cake', ImageCake);
     this.load.image('pot', ImagePot);
     this.load.image('tray', ImageTray);
