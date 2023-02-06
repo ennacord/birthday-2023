@@ -10,6 +10,34 @@ class TeaHouseScene extends Phaser.Scene {
     background.fillStyle(0xfff8ff);
     background.fillRect(0, 0, width, height);
 
+    // Tasks
+    this.tasks = {
+      messages: {
+        text: 'Messages',
+        cleared: true,
+      },
+      mural: {
+        text: 'Mural',
+        cleared: false,
+      },
+      blessing: {
+        text: 'Blessing',
+        cleared: false,
+      },
+      cookbook: {
+        text: 'Cookbook',
+        cleared: false,
+      },
+      button: {
+        text: 'Button',
+        cleared: false,
+      },
+      vnteaser: {
+        text: 'Visual Novel',
+        cleared: false,
+      },
+    };
+
     // Movable layers for parallax
     this.movables = [
       {
@@ -59,14 +87,19 @@ class TeaHouseScene extends Phaser.Scene {
         obj: this.add.container(0, 0, [
           this.menu = this.add.container(0, 20, [
             this.menupeep = this.add.spine(320, 1100, 'menupeep').setScale(0.4),
-            this.menuTasks = this.add.container(240, 490, [
-              this.add.text(0, 0, 'Task 1', { fontFamily: 'Arial', fontSize: 24, color: '#000000' }),
-              this.add.text(0, 40, 'Task 2', { fontFamily: 'Arial', fontSize: 24, color: '#000000' }),
-              this.add.text(0, 80, 'Task 3', { fontFamily: 'Arial', fontSize: 24, color: '#000000' }),
-              this.add.text(0, 120, 'Task 4', { fontFamily: 'Arial', fontSize: 24, color: '#000000' }),
-              this.add.text(0, 160, 'Task 5', { fontFamily: 'Arial', fontSize: 24, color: '#000000' }),
-              this.add.text(0, 200, 'Task 6', { fontFamily: 'Arial', fontSize: 24, color: '#000000' }),
-            ]).setVisible(false).setAngle(-4),
+            this.menuTasks = this.add.container(240, 495, Object.entries(this.tasks)
+              .map(([, { text, cleared }], i) => {
+                const entry = this.add.container(0, 48 * i, [
+                  this.add.text(35, 0, text, { fontFamily: 'Pacifico', fontSize: 24, color: '#000000' }),
+                ]);
+                if (cleared) {
+                  entry.add([
+                    this.add.text(-5, -10, '✓', { fontFamily: 'Arial', fontSize: 50, color: '#33aa33' }),
+                  ]);
+                }
+                return entry;
+              }))
+              .setVisible(false).setAngle(-4),
           ]),
         ]),
         str: 0.1,
