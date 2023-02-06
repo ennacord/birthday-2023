@@ -16,7 +16,7 @@ class TeaHouseScene extends Phaser.Scene {
     this.tasks = {
       messages: {
         text: 'Messages',
-        cleared: true,
+        cleared: false,
       },
       mural: {
         text: 'Mural',
@@ -108,8 +108,10 @@ class TeaHouseScene extends Phaser.Scene {
           this.menu = this.add.container(0, 20, [
             this.menupeep = this.add.spine(320, 1100, 'menupeep').setScale(0.4),
             this.menuTasks = this.add.container(240, 495, Object.entries(this.tasks)
-              .map(([, { text, cleared }], i) => {
+              .map(([key, { text, cleared }], i) => {
+                let hit;
                 const entry = this.add.container(0, 40 * i, [
+                  hit = this.add.rectangle(0, 0, 190, 39, 0xff0000, 0.2).setOrigin(0, 0),
                   this.add.text(35, 0, text, { fontFamily: 'Pacifico', fontSize: 24, color: '#000000' }),
                 ]);
                 if (cleared) {
@@ -117,6 +119,11 @@ class TeaHouseScene extends Phaser.Scene {
                     this.add.text(-5, -10, '✓', { fontFamily: 'Arial', fontSize: 50, color: '#33aa33' }),
                   ]);
                 }
+                hit.setInteractive({ useHandCursor: true }).on('pointerup', () => {
+                  this.tasks[key].cleared = true;
+                  this.game.vue.onProject({ key });
+                  this.menupeepLand();
+                });
                 return entry;
               }))
               .setVisible(false).setAngle(-4),
@@ -171,51 +178,52 @@ class TeaHouseScene extends Phaser.Scene {
 
     this.menupeep.setInteractive({ useHandCursor: true }).on('pointerdown', () => {
       if (this.menuPeepTrn) return;
-      if (this.menuPeepFly) {
-        this.menuPeepFly = false;
-        this.menuPeepTrn = true;
-        this.menuTasks.setVisible(false);
-        this.menupeep.clearTrack(1);
-        this.menupeep.addAnimation(1, 'MenuPeep_hoverUp', true);
-        this.menupeep.addAnimation(2, 'MenuPeep_HideMenu');
-        // menuPeepHover.pause();
-        this.add.tween({
-          targets: this.menupeep,
-          y: { from: 800, to: 1100 },
-          duration: 1000,
-          ease: 'Circ.easeInOut',
-          onComplete: () => {
-            this.menupeep.clearTrack(1);
-            this.menupeep.addAnimation(1, 'MenuPeep_hover', true);
-            this.menupeep.clearTrack(2);
-            // this.menupeepLayer.str = 0.1;
+      if (this.menuPeepFly) return;
+      this.menuPeepFly = true;
+      this.menuPeepTrn = true;
+      this.menupeep.clearTrack(1);
+      this.menupeep.addAnimation(1, 'MenuPeep_hoverUp', true);
+      // this.menupeepLayer.str = -0.6;
+      this.add.tween({
+        targets: this.menupeep,
+        y: { from: 1100, to: 800 },
+        duration: 900,
+        ease: 'Back.easeOut',
+        onComplete: () => {
+          this.menupeep.clearTrack(1);
+          this.menupeep.clearTrack(2);
+          this.menupeep.addAnimation(1, 'MenuPeep_hover', true);
+          this.menupeep.addAnimation(2, 'MenuPeep_ShowMenu');
+          setTimeout(() => {
+            this.menuTasks.setVisible(true);
             this.menuPeepTrn = false;
-          },
-        });
-      } else {
-        this.menuPeepFly = true;
-        this.menuPeepTrn = true;
+          }, 300);
+          // menuPeepHover.play().resume();
+        },
+      });
+    });
+  }
+
+  menupeepLand() {
+    this.menuPeepFly = false;
+    this.menuPeepTrn = true;
+    this.menuTasks.setVisible(false);
+    this.menupeep.clearTrack(1);
+    this.menupeep.addAnimation(1, 'MenuPeep_hoverUp', true);
+    this.menupeep.addAnimation(2, 'MenuPeep_HideMenu');
+    // menuPeepHover.pause();
+    this.add.tween({
+      targets: this.menupeep,
+      y: { from: 800, to: 1100 },
+      duration: 1000,
+      ease: 'Circ.easeInOut',
+      onComplete: () => {
         this.menupeep.clearTrack(1);
-        this.menupeep.addAnimation(1, 'MenuPeep_hoverUp', true);
-        // this.menupeepLayer.str = -0.6;
-        this.add.tween({
-          targets: this.menupeep,
-          y: { from: 1100, to: 800 },
-          duration: 900,
-          ease: 'Back.easeOut',
-          onComplete: () => {
-            this.menupeep.clearTrack(1);
-            this.menupeep.clearTrack(2);
-            this.menupeep.addAnimation(1, 'MenuPeep_hover', true);
-            this.menupeep.addAnimation(2, 'MenuPeep_ShowMenu');
-            setTimeout(() => {
-              this.menuTasks.setVisible(true);
-              this.menuPeepTrn = false;
-            }, 300);
-            // menuPeepHover.play().resume();
-          },
-        });
-      }
+        this.menupeep.addAnimation(1, 'MenuPeep_hover', true);
+        this.menupeep.clearTrack(2);
+        // this.menupeepLayer.str = 0.1;
+        this.menuPeepTrn = false;
+      },
     });
   }
 }
