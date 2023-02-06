@@ -1,6 +1,4 @@
-// eslint-disable-next-line import/no-unresolved
 import { fileURLToPath, URL } from 'node:url';
-/* eslint-disable import/no-extraneous-dependencies */
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 
@@ -22,5 +20,8 @@ export default defineConfig({
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
+  },
+  server: {
+    hmr: false,
   },
 });
