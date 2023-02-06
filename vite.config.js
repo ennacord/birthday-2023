@@ -5,7 +5,7 @@ export default defineConfig({
   root: './src',
   publicDir: '../public',
   define: {
-    CANVAS_RENDERER: JSON.stringify(true),
+    CANVAS_RENDERER: JSON.stringify(false),
     WEBGL_RENDERER: JSON.stringify(true),
   },
   build: {

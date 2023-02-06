@@ -7,10 +7,9 @@ import plugins from './plugins';
 // Phaser Game Instance
 // eslint-disable-next-line no-new
 new Phaser.Game({
-  type: Phaser.AUTO,
+  type: Phaser.WEBGL,
   parent: 'game',
   banner: false,
-  disableContextMenu: true,
   backgroundColor: Phaser.Display.Color.HexStringToColor('#d0d0d0').color,
   scale: {
     mode: Phaser.Scale.FIT,

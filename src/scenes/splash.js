@@ -26,6 +26,14 @@ class SplashScene extends Phaser.Scene {
       color: '#bc517c',
     });
 
+    this.add.text(0, height - 30, 'WEBGL MODE', {
+      fontFamily: 'Arial',
+      fontSize: 16,
+      align: 'center',
+      fixedWidth: width,
+      color: '#bc517c',
+    });
+
     this.input.once('pointerdown', () => {
       this.scene.start('teahouse');
     });
