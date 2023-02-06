@@ -5,26 +5,30 @@ class SplashScene extends Phaser.Scene {
     const { width, height } = this.game.canvas;
 
     const background = this.add.graphics();
-    background.fillStyle(0xf0f0f0);
+    background.fillStyle(0xfff7f9);
     background.fillRect(0, 0, width, height);
 
-    // Click to start, to be enabled later on
-    // this.add.text((width * 0.5) - 200, height * 0.6, 'CLICK TO START', {
-    //   fontFamily: 'Zen Maru Gothic',
-    //   fontStyle: 'bold',
-    //   fontSize: 40,
-    //   align: 'center',
-    //   fixedWidth: 400,
-    //   color: '#ffffff',
-    //   stroke: '#000000',
-    //   strokeThickness: 5,
-    // });
+    this.add.text(0, height * 0.45, 'Happy Bithday Enna Alouette!', {
+      fontFamily: 'Pacifico',
+      fontSize: 50,
+      align: 'center',
+      fixedWidth: width,
+      color: '#bc517c',
+      stroke: '#f3c9d4',
+      strokeThickness: 5,
+    });
 
-    // this.input.once('pointerdown', () => {
-    //   this.scene.start('teahouse');
-    // });
+    this.add.text(0, height * 0.55, 'Touch to start the tea party...', {
+      fontFamily: 'Pacifico',
+      fontSize: 30,
+      align: 'center',
+      fixedWidth: width,
+      color: '#bc517c',
+    });
 
-    this.scene.start('teahouse');
+    this.input.once('pointerdown', () => {
+      this.scene.start('teahouse');
+    });
   }
 }
 

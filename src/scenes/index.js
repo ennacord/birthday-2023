@@ -25,21 +25,12 @@ class IndexScene extends Phaser.Scene {
     const { width, height } = this.game.canvas;
 
     const background = this.add.graphics();
-    background.fillStyle(0xf0f0f0);
+    background.fillStyle(0xfff7f9);
     background.fillRect(0, 0, width, height);
-
-    // Loading text
-    this.add.text((width * 0.5) - 150, (height * 0.5) - 10, 'Loading...', {
-      fontFamily: 'Arial, Helvetica, sans-serif',
-      fontSize: 30,
-      align: 'center',
-      fixedWidth: 300,
-      color: '#000000',
-    });
 
     // Google Fonts
     this.load.rexWebFont({
-      google: { families: ['Zen Maru Gothic'] },
+      google: { families: ['Pacifico'] },
       testString: 'ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz 1234567890 !@#$%^&*()-_=+[{]}\\|;:\'",<.>/?',
     });
 
