@@ -13,26 +13,30 @@ class TeaHouseScene extends Phaser.Scene {
     // Movable layers for parallax
     this.movables = [
       {
-        origin: [0, 0],
-        obj: this.add.container(0, 0, [this.add.image(0, 0, 'bush').setOrigin(0, 0)]),
+        origin: [-30, 0],
+        obj: this.add.container(0, 0, [
+          this.add.image(0, 0, 'bush').setScale(1.3).setOrigin(0, 0),
+        ]),
         str: 0.6,
       },
       {
-        origin: [0, 0],
-        obj: this.add.container(0, 0, [this.add.image(0, 0, 'pillars').setOrigin(0, 0)]),
-        str: 0.4,
+        origin: [width * 0.5, height * 1.1],
+        obj: this.add.container(0, 0, [
+          this.bgitems = this.add.spine(0, 0, 'bgitems').setScale(0.5),
+        ]),
+        str: 0.3,
       },
       {
         origin: [0, 0],
         obj: this.add.container(0, 0, [
-          this.add.spine(width * 0.5, height, 'enna'),
+          this.add.spine(width * 0.5, height + 10, 'enna'),
         ]),
         str: 0.2,
       },
       {
         origin: [0, 0],
         obj: this.add.container(0, 0, [
-          this.add.image(480, 200, 'tray').setOrigin(0, 0),
+          this.add.image(480, 300, 'tray').setScale(0.85).setOrigin(0, 0),
         ]),
         str: 0.16,
       },
@@ -46,7 +50,7 @@ class TeaHouseScene extends Phaser.Scene {
       {
         origin: [0, 0],
         obj: this.add.container(0, 0, [
-          this.add.image(0, -100, 'ap2').setOrigin(0, 0),
+          this.twekpeep = this.add.spine(1400, 920, 'twerkpeep').setScale(0.4),
         ]),
         str: 0.1,
       },
@@ -88,6 +92,10 @@ class TeaHouseScene extends Phaser.Scene {
       });
     });
 
+    // Other animations
+    this.twekpeep.addAnimation(0, 'TwerkPeep_Twerk', true);
+    this.bgitems.addAnimation(0, 'animation', true);
+
     // Menu Peep Animations
     // 0 MenuPeep_blink
     // 0 MenuPeep_blinkSmile
@@ -122,6 +130,7 @@ class TeaHouseScene extends Phaser.Scene {
           targets: this.menupeep,
           y: { from: 800, to: 1100 },
           duration: 1000,
+          ease: 'Circ.easeInOut',
           onComplete: () => {
             this.menupeep.clearTrack(1);
             this.menupeep.addAnimation(1, 'MenuPeep_hover', true);
@@ -140,6 +149,7 @@ class TeaHouseScene extends Phaser.Scene {
           targets: this.menupeep,
           y: { from: 1100, to: 800 },
           duration: 1000,
+          ease: 'Back.easeOut',
           onComplete: () => {
             this.menupeep.clearTrack(1);
             this.menupeep.clearTrack(2);
