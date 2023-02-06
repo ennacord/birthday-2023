@@ -1,22 +1,25 @@
+import { createApp } from 'vue';
 import './style.css';
 
-import Phaser from 'phaser';
-import scene from './scenes';
-import plugins from './plugins';
+import 'vuetify/styles';
+import '@mdi/font/css/materialdesignicons.css';
+import { createVuetify } from 'vuetify';
+import * as components from 'vuetify/components';
+import * as directives from 'vuetify/directives';
+import { aliases, mdi } from 'vuetify/iconsets/mdi';
 
-// Phaser Game Instance
-// eslint-disable-next-line no-new
-new Phaser.Game({
-  type: Phaser.WEBGL,
-  parent: 'game',
-  banner: false,
-  backgroundColor: Phaser.Display.Color.HexStringToColor('#d0d0d0').color,
-  scale: {
-    mode: Phaser.Scale.FIT,
-    autoCenter: Phaser.Scale.CENTER_BOTH,
-    width: 1920,
-    height: 937,
+import App from './App.vue';
+
+const vuetify = createVuetify({
+  icons: {
+    defaultSet: 'mdi',
+    aliases,
+    sets: { mdi },
   },
-  plugins,
-  scene,
+  components,
+  directives,
 });
+
+const app = createApp(App);
+app.use(vuetify);
+app.mount('#app');

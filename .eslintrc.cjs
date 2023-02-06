@@ -1,15 +1,11 @@
+/* eslint-env node */
 module.exports = {
-  env: {
-    browser: true,
-    es2021: true,
-  },
+  root: true,
   extends: [
-    'airbnb-base',
+    'plugin:vue/vue3-essential',
+    'eslint:recommended',
   ],
   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-  },
-  rules: {
-  },
-};
+    ecmaVersion: 'latest'
+  }
+}
