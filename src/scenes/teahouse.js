@@ -10,6 +10,8 @@ class TeaHouseScene extends Phaser.Scene {
     background.fillStyle(0xfff8ff);
     background.fillRect(0, 0, width, height);
 
+    this.cameras.main.fadeIn(2000, 255, 247, 249);
+
     // Tasks
     this.tasks = {
       messages: {
@@ -21,7 +23,7 @@ class TeaHouseScene extends Phaser.Scene {
         cleared: false,
       },
       blessing: {
-        text: 'Blessing',
+        text: 'Blessing MV',
         cleared: false,
       },
       cookbook: {
@@ -29,11 +31,15 @@ class TeaHouseScene extends Phaser.Scene {
         cleared: false,
       },
       button: {
-        text: 'Button',
+        text: 'Enna Button',
         cleared: false,
       },
       vnteaser: {
-        text: 'Visual Novel',
+        text: 'VN Teaser',
+        cleared: false,
+      },
+      cake: {
+        text: 'Secret Event',
         cleared: false,
       },
     };
@@ -89,7 +95,7 @@ class TeaHouseScene extends Phaser.Scene {
             this.menupeep = this.add.spine(320, 1100, 'menupeep').setScale(0.4),
             this.menuTasks = this.add.container(240, 495, Object.entries(this.tasks)
               .map(([, { text, cleared }], i) => {
-                const entry = this.add.container(0, 48 * i, [
+                const entry = this.add.container(0, 40 * i, [
                   this.add.text(35, 0, text, { fontFamily: 'Pacifico', fontSize: 24, color: '#000000' }),
                 ]);
                 if (cleared) {
@@ -140,14 +146,14 @@ class TeaHouseScene extends Phaser.Scene {
     this.menupeep.addAnimation(1, 'MenuPeep_hover', true);
     this.menupeep.addAnimation(2, 'MenuPeep_NoMenu');
 
-    const menuPeepHover = this.add.tween({
-      targets: this.menu,
-      y: { from: this.menu.y, to: this.menu.y - 10 },
-      duration: 670,
-      yoyo: true,
-      loop: -1,
-    });
-    menuPeepHover.pause();
+    // const menuPeepHover = this.add.tween({
+    //   targets: this.menu,
+    //   y: { from: this.menu.y, to: this.menu.y - 10 },
+    //   duration: 670,
+    //   yoyo: true,
+    //   loop: -1,
+    // });
+    // menuPeepHover.pause();
 
     this.menupeep.setInteractive({ useHandCursor: true }).on('pointerdown', () => {
       if (this.menuPeepTrn) return;
@@ -158,7 +164,7 @@ class TeaHouseScene extends Phaser.Scene {
         this.menupeep.clearTrack(1);
         this.menupeep.addAnimation(1, 'MenuPeep_hoverUp', true);
         this.menupeep.addAnimation(2, 'MenuPeep_HideMenu');
-        menuPeepHover.pause();
+        // menuPeepHover.pause();
         this.add.tween({
           targets: this.menupeep,
           y: { from: 800, to: 1100 },
@@ -181,16 +187,18 @@ class TeaHouseScene extends Phaser.Scene {
         this.add.tween({
           targets: this.menupeep,
           y: { from: 1100, to: 800 },
-          duration: 1000,
+          duration: 900,
           ease: 'Back.easeOut',
           onComplete: () => {
             this.menupeep.clearTrack(1);
             this.menupeep.clearTrack(2);
             this.menupeep.addAnimation(1, 'MenuPeep_hover', true);
             this.menupeep.addAnimation(2, 'MenuPeep_ShowMenu');
-            this.menuTasks.setVisible(true);
-            menuPeepHover.play().resume();
-            this.menuPeepTrn = false;
+            setTimeout(() => {
+              this.menuTasks.setVisible(true);
+              this.menuPeepTrn = false;
+            }, 300);
+            // menuPeepHover.play().resume();
           },
         });
       }
