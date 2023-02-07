@@ -1,11 +1,10 @@
-/* eslint-disable import/no-unresolved */
 import Phaser from 'phaser';
 
 import SplashScene from './splash';
 import TeahouseScene from './teahouse';
 
-import SpineImportedJson from '../assets/spine/imported.json';
-import SpineImportedAtlas from '../assets/spine/imported.atlas?url';
+import SpineEnnaJson from '../assets/spine/ennatable.json';
+import SpineEnnaAtlas from '../assets/spine/ennatable.atlas?url';
 import SpineMenupeepJson from '../assets/spine/menupeep.json';
 import SpineMenupeepAtlas from '../assets/spine/menupeep.atlas?url';
 import SpineTwerkpeepJson from '../assets/spine/twerkpeep.json';
@@ -38,17 +37,10 @@ class IndexScene extends Phaser.Scene {
     });
 
     // Spine
-    this.load.spine('enna', SpineImportedJson, [SpineImportedAtlas], true);
+    this.load.spine('enna', SpineEnnaJson, [SpineEnnaAtlas], true);
     this.load.spine('menupeep', SpineMenupeepJson, [SpineMenupeepAtlas], true);
     this.load.spine('twerkpeep', SpineTwerkpeepJson, [SpineTwerkpeepAtlas], true);
     this.load.spine('bgitems', SpineBgitemsJson, [SpineBgitemsAtlas], true);
-
-    // Images
-    // this.load.image('ap1', ImageAp1);
-    // this.load.image('ap2', ImageAp2);
-    this.load.image('bush', ImageBush);
-    this.load.image('pillars', ImagePillars);
-    // this.load.image('teaset', ImageTeaset);
 
     this.load.image('cloud1', ImageCloud1);
     this.load.image('cloud2', ImageCloud2);

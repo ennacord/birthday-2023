@@ -58,84 +58,95 @@ class TeaHouseScene extends Phaser.Scene {
         obj: this.add.container(0, 0, [
           this.add.image(0, 0, 'cloud3').setScale(0.5),
         ]),
-        str: 0.8,
+        str: 1.6,
       },
       {
         origin: [width * 0.5, height * 0.5],
         obj: this.add.container(0, 0, [
           this.add.image(0, 0, 'cloud2').setScale(0.5),
         ]),
-        str: 0.7,
+        str: 1.2,
       },
       {
         origin: [width * 0.5, height * 0.5],
         obj: this.add.container(0, 0, [
           this.add.image(0, 0, 'cloud1').setScale(0.5),
         ]),
-        str: 0.6,
+        str: 0.8,
       },
       {
-        origin: [width * 0.5, height * 1.1],
+        origin: [width * 0.5, height * 1.13],
         obj: this.add.container(0, 0, [
-          this.bgitems = this.add.spine(0, 0, 'bgitems').setScale(0.5),
+          this.bgitems = this.add.spine(0, 0, 'bgitems').setScale(0.49),
         ]),
         str: 0.3,
       },
       {
-        origin: [0, 0],
+        origin: [width * 0.5, height * 1.11],
         obj: this.add.container(0, 0, [
-          this.add.spine(width * 0.5, height + 10, 'enna'),
+          this.add.spine(0, 0, 'enna').setScale(0.5),
         ]),
-        str: 0.2,
+        str: -0.1,
       },
       {
         origin: [0, 0],
         obj: this.add.container(0, 0, [
-          this.add.image(480, 300, 'tray').setScale(0.85).setOrigin(0, 0),
+          this.twekpeep = this.add.spine(1400, 880, 'twerkpeep').setScale(0.4),
         ]),
-        str: 0.16,
+        str: -0.15,
       },
       {
         origin: [0, 0],
         obj: this.add.container(0, 0, [
-          this.add.image(800, 600, 'pot').setOrigin(0, 0),
+          this.add.image(440, 340, 'tray').setScale(0.8).setOrigin(0, 0),
         ]),
-        str: 0.12,
+        str: -0.15,
       },
       {
         origin: [0, 0],
         obj: this.add.container(0, 0, [
-          this.twekpeep = this.add.spine(1400, 920, 'twerkpeep').setScale(0.4),
+          this.add.image(710, 680, 'pot').setScale(0.8).setOrigin(0, 0),
         ]),
-        str: 0.1,
+        str: -0.2,
       },
       this.menupeepLayer = {
         origin: [0, 0],
         obj: this.add.container(0, 0, [
-          this.menu = this.add.container(0, 20, [
-            this.menupeep = this.add.spine(320, 1100, 'menupeep').setScale(0.4),
-            this.menuTasks = this.add.container(240, 495, Object.entries(this.tasks)
+          this.menu = this.add.container(180, 560, [
+            this.menupeep = this.add.spine(80, 605, 'menupeep').setScale(0.4),
+            this.menuTasks = this.add.container(0, 0, Object.entries(this.tasks)
               .map(([key, { text }], i) => {
                 let hit;
                 const entry = this.add.container(0, 40 * i, [
                   hit = this.add.rectangle(0, 0, 190, 39, 0xff0000, 0).setOrigin(0, 0),
-                  this.add.text(35, 0, text, { fontFamily: 'Pacifico', fontSize: 24, color: '#000000' }),
+                  this.add.text(35, 0, text, { fontFamily: 'Pacifico', fontSize: 24, color: '#6b40a5' }),
                   this.tasks[key].tick = this.add
                     .text(-5, -10, '✓', { fontFamily: 'Arial', fontSize: 50, color: '#33aa33' })
                     .setVisible(false),
                 ]);
-                hit.setInteractive({ useHandCursor: true }).on('pointerup', () => {
-                  this.tasks[key].cleared = true;
-                  this.tasks[key].tick.setVisible(true);
-                  this.game.vue.onProject({ key });
-                  this.menupeepLand();
-                });
+                if (key !== 'cake') {
+                  hit.setInteractive({ useHandCursor: true }).on('pointerup', () => {
+                    this.tasks[key].cleared = true;
+                    this.tasks[key].tick.setVisible(true);
+                    this.game.vue.onProject({ key });
+                    this.menupeepLand();
+                  });
+                }
                 return entry;
-              }))
-              .setVisible(false).setAngle(-4),
+              })
+              .concat([
+                this.add.rectangle(0, -230, 190, 200, 0xff0000, 0)
+                  .setOrigin(0, 0)
+                  .setInteractive({ useHandCursor: true })
+                  .on('pointerdown', () => {
+                    this.menupeepLand();
+                  }),
+              ])
+            )
+            .setVisible(false).setAngle(-4),
           ]),
         ]),
-        str: 0.1,
+        str: -0.2,
       },
     ];
 
@@ -152,8 +163,8 @@ class TeaHouseScene extends Phaser.Scene {
       const dx = pointer.x - centerX;
       const dy = pointer.y - centerY;
       this.movables.forEach(({ origin, obj, str }) => {
-        const newX = origin[0] + (dx * 0.05) * str;
-        const newY = origin[1] + (dy * 0.03) * str;
+        const newX = origin[0] + (dx * 0.04) * str;
+        const newY = origin[1] + (dy * 0.07) * str;
         obj.setPosition(newX, newY);
       });
     });
@@ -192,7 +203,7 @@ class TeaHouseScene extends Phaser.Scene {
       // this.menupeepLayer.str = -0.6;
       this.add.tween({
         targets: this.menupeep,
-        y: { from: 1100, to: 800 },
+        y: { from: this.menupeep.y, to: this.menupeep.y - 300 },
         duration: 900,
         ease: 'Back.easeOut',
         onComplete: () => {
@@ -220,7 +231,7 @@ class TeaHouseScene extends Phaser.Scene {
     // menuPeepHover.pause();
     this.add.tween({
       targets: this.menupeep,
-      y: { from: 800, to: 1100 },
+      y: { from: this.menupeep.y, to: this.menupeep.y + 300 },
       duration: 1000,
       ease: 'Circ.easeInOut',
       onComplete: () => {

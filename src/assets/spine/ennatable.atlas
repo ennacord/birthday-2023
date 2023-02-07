@@ -1,0 +1,250 @@
+
+ennatable1.png
+size: 2048, 2048
+format: RGBA8888
+filter: Linear, Linear
+repeat: none
+Enna_body
+  rotate: true
+  xy: 596, 90
+  size: 458, 691
+  orig: 458, 691
+  offset: 0, 0
+  index: -1
+Enna_face
+  rotate: false
+  xy: 1630, 188
+  size: 380, 515
+  orig: 380, 515
+  offset: 0, 0
+  index: -1
+Enna_face_EyeballLeft
+  rotate: false
+  xy: 2, 536
+  size: 59, 81
+  orig: 59, 81
+  offset: 0, 0
+  index: -1
+Enna_face_EyeballRight
+  rotate: false
+  xy: 1682, 1441
+  size: 50, 72
+  orig: 50, 72
+  offset: 0, 0
+  index: -1
+Enna_face_EyesLeft
+  rotate: false
+  xy: 597, 432
+  size: 135, 83
+  orig: 135, 83
+  offset: 0, 0
+  index: -1
+Enna_face_EyesRight
+  rotate: false
+  xy: 1019, 540
+  size: 106, 77
+  orig: 108, 77
+  offset: 2, 0
+  index: -1
+Enna_face_Mouth
+  rotate: false
+  xy: 863, 551
+  size: 85, 66
+  orig: 86, 67
+  offset: 1, 0
+  index: -1
+Enna_face_eyebrowLeft
+  rotate: false
+  xy: 63, 584
+  size: 142, 33
+  orig: 142, 33
+  offset: 0, 0
+  index: -1
+Enna_face_eyebrowRight
+  rotate: false
+  xy: 940, 598
+  size: 89, 19
+  orig: 89, 19
+  offset: 0, 0
+  index: -1
+Enna_face_eyewhite
+  rotate: false
+  xy: 598, 536
+  size: 263, 81
+  orig: 263, 81
+  offset: 0, 0
+  index: -1
+Enna_face_lashesLeft
+  rotate: false
+  xy: 207, 597
+  size: 54, 20
+  orig: 54, 20
+  offset: 0, 0
+  index: -1
+Enna_face_lashesRight
+  rotate: false
+  xy: 63, 560
+  size: 48, 22
+  orig: 48, 22
+  offset: 0, 0
+  index: -1
+Enna_hair_ahoge
+  rotate: true
+  xy: 1777, 728
+  size: 250, 202
+  orig: 250, 202
+  offset: 0, 0
+  index: -1
+Enna_hair_back
+  rotate: true
+  xy: 2, 33
+  size: 584, 594
+  orig: 584, 594
+  offset: 0, 0
+  index: -1
+Enna_hair_bangs
+  rotate: false
+  xy: 1525, 1336
+  size: 171, 263
+  orig: 171, 263
+  offset: 0, 0
+  index: -1
+Enna_hair_left1
+  rotate: true
+  xy: 75, 2
+  size: 120, 466
+  orig: 120, 468
+  offset: 0, 0
+  index: -1
+Enna_hair_right2
+  rotate: 270
+  xy: 741, 23
+  size: 164, 481
+  orig: 164, 481
+  offset: 0, 0
+  index: -1
+Enna_leftHand_Idle
+  rotate: true
+  xy: 1777, 980
+  size: 619, 205
+  orig: 619, 205
+  offset: 0, 0
+  index: -1
+Enna_leftHand_Idle_pinky
+  rotate: false
+  xy: 650, 485
+  size: 115, 49
+  orig: 115, 49
+  offset: 0, 0
+  index: -1
+Enna_leftHand_Pray
+  rotate: false
+  xy: 1496, 705
+  size: 279, 617
+  orig: 279, 617
+  offset: 0, 0
+  index: -1
+Enna_rightArm_Idle
+  rotate: false
+  xy: 1525, 1601
+  size: 380, 416
+  orig: 380, 416
+  offset: 0, 0
+  index: -1
+Enna_rightHand_Pray
+  rotate: false
+  xy: 1289, 30
+  size: 339, 587
+  orig: 339, 587
+  offset: 0, 0
+  index: -1
+Enna_table1
+  rotate: false
+  xy: 2, 619
+  size: 1492, 703
+  orig: 1492, 703
+  offset: 0, 0
+  index: -1
+Enna_table2
+  rotate: false
+  xy: 2, 1324
+  size: 1521, 693
+  orig: 1521, 693
+  offset: 0, 0
+  index: -1
+
+ennatable2.png
+size: 2048, 2048
+format: RGBA8888
+filter: Linear, Linear
+repeat: none
+Enna_chair
+  rotate: false
+  xy: 943, 742
+  size: 832, 1176
+  orig: 832, 1176
+  offset: 0, 0
+  index: -1
+Enna_hairClasp_left
+  rotate: true
+  xy: 15, 1092
+  size: 256, 619
+  orig: 256, 619
+  offset: 0, 0
+  index: -1
+Enna_hairClasp_right
+  rotate: 180
+  xy: 396, 1297
+  size: 186, 612
+  orig: 186, 612
+  offset: 0, 0
+  index: -1
+Enna_hair_left2
+  rotate: false
+  xy: 2, 1368
+  size: 191, 550
+  orig: 191, 550
+  offset: 0, 0
+  index: -1
+Enna_hair_right1
+  rotate: 180
+  xy: 179, 1279
+  size: 220, 639
+  orig: 220, 639
+  offset: 0, 0
+  index: -1
+Enna_leftArm_Idle
+  rotate: false
+  xy: 584, 1261
+  size: 207, 481
+  orig: 207, 481
+  offset: 0, 0
+  index: -1
+Enna_leftArm_Pray
+  rotate: true
+  xy: 2, 883
+  size: 207, 491
+  orig: 207, 491
+  offset: 0, 0
+  index: -1
+Enna_rightArm_Pray
+  rotate: false
+  xy: 651, 764
+  size: 290, 472
+  orig: 290, 472
+  offset: 0, 0
+  index: -1
+Enna_rightHand_Teacup
+  rotate: 270
+  xy: 97, 651
+  size: 399, 602
+  orig: 399, 602
+  offset: 0, 0
+  index: -1
+Enna_table3
+  rotate: false
+  xy: 2, 2
+  size: 987, 647
+  orig: 987, 647
+  offset: 0, 0
+  index: -1
