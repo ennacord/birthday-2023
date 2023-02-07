@@ -84,7 +84,7 @@ class TeaHouseScene extends Phaser.Scene {
       {
         origin: [width * 0.5, height * 1.11],
         obj: this.add.container(0, 0, [
-          this.add.spine(0, 0, 'enna').setScale(0.5),
+          this.enna = this.add.spine(0, 0, 'enna').setScale(0.5),
         ]),
         str: -0.1,
       },
@@ -172,6 +172,7 @@ class TeaHouseScene extends Phaser.Scene {
     // Other animations
     this.twekpeep.addAnimation(0, 'TwerkPeep_Twerk', true);
     this.bgitems.addAnimation(0, 'animation', true);
+    this.enna.addAnimation(0, 'Enna_idle', true);
 
     // Menu Peep Animations
     // 0 MenuPeep_blink
