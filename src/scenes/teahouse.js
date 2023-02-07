@@ -17,30 +17,37 @@ class TeaHouseScene extends Phaser.Scene {
       messages: {
         text: 'Messages',
         cleared: false,
+        tick: null,
       },
       mural: {
         text: 'Mural',
         cleared: false,
+        tick: null,
       },
       blessing: {
         text: 'Blessing MV',
         cleared: false,
+        tick: null,
       },
       cookbook: {
         text: 'Cookbook',
         cleared: false,
+        tick: null,
       },
       button: {
         text: 'Enna Button',
         cleared: false,
+        tick: null,
       },
       vnteaser: {
         text: 'VN Teaser',
         cleared: false,
+        tick: null,
       },
       cake: {
         text: 'Secret Event',
         cleared: false,
+        tick: null,
       },
     };
 
@@ -108,19 +115,18 @@ class TeaHouseScene extends Phaser.Scene {
           this.menu = this.add.container(0, 20, [
             this.menupeep = this.add.spine(320, 1100, 'menupeep').setScale(0.4),
             this.menuTasks = this.add.container(240, 495, Object.entries(this.tasks)
-              .map(([key, { text, cleared }], i) => {
+              .map(([key, { text }], i) => {
                 let hit;
                 const entry = this.add.container(0, 40 * i, [
-                  hit = this.add.rectangle(0, 0, 190, 39, 0xff0000, 0.2).setOrigin(0, 0),
+                  hit = this.add.rectangle(0, 0, 190, 39, 0xff0000, 0).setOrigin(0, 0),
                   this.add.text(35, 0, text, { fontFamily: 'Pacifico', fontSize: 24, color: '#000000' }),
+                  this.tasks[key].tick = this.add
+                    .text(-5, -10, '✓', { fontFamily: 'Arial', fontSize: 50, color: '#33aa33' })
+                    .setVisible(false),
                 ]);
-                if (cleared) {
-                  entry.add([
-                    this.add.text(-5, -10, '✓', { fontFamily: 'Arial', fontSize: 50, color: '#33aa33' }),
-                  ]);
-                }
                 hit.setInteractive({ useHandCursor: true }).on('pointerup', () => {
                   this.tasks[key].cleared = true;
+                  this.tasks[key].tick.setVisible(true);
                   this.game.vue.onProject({ key });
                   this.menupeepLand();
                 });
