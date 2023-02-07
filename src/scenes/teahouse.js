@@ -207,9 +207,7 @@ class TeaHouseScene extends Phaser.Scene {
         duration: 900,
         ease: 'Back.easeOut',
         onComplete: () => {
-          this.menupeep.clearTrack(1);
           this.menupeep.clearTrack(2);
-          this.menupeep.addAnimation(1, 'MenuPeep_hover', true);
           this.menupeep.addAnimation(2, 'MenuPeep_ShowMenu');
           setTimeout(() => {
             this.menuTasks.setVisible(true);
@@ -225,8 +223,7 @@ class TeaHouseScene extends Phaser.Scene {
     this.menuPeepFly = false;
     this.menuPeepTrn = true;
     this.menuTasks.setVisible(false);
-    this.menupeep.clearTrack(1);
-    this.menupeep.addAnimation(1, 'MenuPeep_hoverUp', true);
+    this.menupeep.clearTrack(2);
     this.menupeep.addAnimation(2, 'MenuPeep_HideMenu');
     // menuPeepHover.pause();
     this.add.tween({
