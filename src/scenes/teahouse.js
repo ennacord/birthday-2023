@@ -54,66 +54,66 @@ class TeaHouseScene extends Phaser.Scene {
     // Movable layers for parallax
     this.movables = [
       {
-        origin: [width * 0.5, height * 0.5],
+        origin: [width * 0.5, height * 0.6],
         obj: this.add.container(0, 0, [
           this.add.image(0, 0, 'cloud3').setScale(0.5),
         ]),
         str: 1.6,
       },
       {
-        origin: [width * 0.5, height * 0.5],
+        origin: [width * 0.5, height * 0.6],
         obj: this.add.container(0, 0, [
           this.add.image(0, 0, 'cloud2').setScale(0.5),
         ]),
         str: 1.2,
       },
       {
-        origin: [width * 0.5, height * 0.5],
+        origin: [width * 0.5, height * 0.6],
         obj: this.add.container(0, 0, [
           this.add.image(0, 0, 'cloud1').setScale(0.5),
         ]),
         str: 0.8,
       },
       {
-        origin: [width * 0.5, height * 1.13],
+        origin: [width * 0.5, height * 1.12],
         obj: this.add.container(0, 0, [
           this.bgitems = this.add.spine(0, 0, 'bgitems').setScale(0.49),
         ]),
         str: 0.3,
       },
       {
-        origin: [width * 0.5, height * 1.11],
+        origin: [(width * 0.5) + 60, (height * 1.11) + 20],
         obj: this.add.container(0, 0, [
-          this.enna = this.add.spine(0, 0, 'enna').setScale(0.5),
+          this.enna = this.add.spine(0, 0, 'enna').setScale(0.51),
         ]),
         str: -0.1,
       },
       {
         origin: [0, 0],
         obj: this.add.container(0, 0, [
-          this.twekpeep = this.add.spine(1400, 880, 'twerkpeep').setScale(0.4),
+          this.twekpeep = this.add.spine(1600, 900, 'twerkpeep').setScale(0.41),
         ]),
         str: -0.15,
       },
       {
         origin: [0, 0],
         obj: this.add.container(0, 0, [
-          this.add.image(440, 340, 'tray').setScale(0.8).setOrigin(0, 0),
+          this.add.image(515, 330, 'tray').setScale(0.82).setOrigin(0, 0),
         ]),
         str: -0.15,
       },
       {
         origin: [0, 0],
         obj: this.add.container(0, 0, [
-          this.add.image(710, 680, 'pot').setScale(0.8).setOrigin(0, 0),
+          this.add.image(815, 705, 'pot').setScale(0.7).setOrigin(0, 0),
         ]),
-        str: -0.2,
+        str: -0.18,
       },
       this.menupeepLayer = {
         origin: [0, 0],
         obj: this.add.container(0, 0, [
-          this.menu = this.add.container(180, 560, [
-            this.menupeep = this.add.spine(80, 605, 'menupeep').setScale(0.4),
+          this.menu = this.add.container(210, 540, [
+            this.menupeep = this.add.spine(80, 575, 'menupeep').setScale(0.4),
             this.menuTasks = this.add.container(0, 0, Object.entries(this.tasks)
               .map(([key, { text }], i) => {
                 let hit;
@@ -145,8 +145,8 @@ class TeaHouseScene extends Phaser.Scene {
             )
             .setVisible(false).setAngle(-4),
           ]),
-        ]),
-        str: -0.2,
+        ]).setScale(1.05),
+        str: -0.23,
       },
     ];
 
@@ -204,7 +204,7 @@ class TeaHouseScene extends Phaser.Scene {
       // this.menupeepLayer.str = -0.6;
       this.add.tween({
         targets: this.menupeep,
-        y: { from: this.menupeep.y, to: this.menupeep.y - 300 },
+        y: { from: this.menupeep.y, to: this.menupeep.y - 270 },
         duration: 900,
         ease: 'Back.easeOut',
         onComplete: () => {
@@ -229,7 +229,7 @@ class TeaHouseScene extends Phaser.Scene {
     // menuPeepHover.pause();
     this.add.tween({
       targets: this.menupeep,
-      y: { from: this.menupeep.y, to: this.menupeep.y + 300 },
+      y: { from: this.menupeep.y, to: this.menupeep.y + 270 },
       duration: 1000,
       ease: 'Circ.easeInOut',
       onComplete: () => {

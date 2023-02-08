@@ -12,9 +12,6 @@ import SpineTwerkpeepAtlas from '../assets/spine/twerkpeep.atlas?url';
 import SpineBgitemsJson from '../assets/spine/bgitems.json';
 import SpineBgitemsAtlas from '../assets/spine/bgitems.atlas?url';
 
-import ImageBush from '../assets/images/bush.png';
-import ImagePillars from '../assets/images/pillars.png';
-
 import ImageCloud1 from '../assets/frames/cloud1.png';
 import ImageCloud2 from '../assets/frames/cloud2.png';
 import ImageCloud3 from '../assets/frames/cloud3.png';
