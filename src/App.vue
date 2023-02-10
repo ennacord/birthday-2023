@@ -19,10 +19,13 @@
       <div class="dialog">
         <div class="dialog-title">
           Drawing Board
-          <span>- description TBD -</span>
+          <span>Some aloupeeps drew their greetings on a shared community board!</span>
           <div class="dialog-close">
             <v-btn variant="tonal" @click="show_mural = false">Close</v-btn>
           </div>
+        </div>
+        <div class="dialog-body">
+          <ProjectMural/>
         </div>
       </div>
     </v-dialog>
@@ -79,6 +82,7 @@ import scene from './scenes';
 import plugins from './plugins';
 
 import ProjectMessages from '@/projects/ProjectMessages.vue';
+import ProjectMural from '@/projects/ProjectMural.vue';
 
 export default {
   data() {
@@ -121,6 +125,7 @@ export default {
   },
   components: {
     ProjectMessages,
+    ProjectMural,
   }
 }
 </script>
