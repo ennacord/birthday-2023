@@ -47,10 +47,13 @@
       <div class="dialog">
         <div class="dialog-title">
           Cookbook
-          <span>- description TBD -</span>
+          <span>Aloupeeps gather their recipe into a cookbook!</span>
           <div class="dialog-close">
             <v-btn variant="tonal" @click="show_cookbook = false">Close</v-btn>
           </div>
+        </div>
+        <div class="dialog-body">
+          <ProjectCookbook/>
         </div>
       </div>
     </v-dialog>
@@ -93,6 +96,7 @@ import plugins from './plugins';
 import ProjectMessages from '@/projects/ProjectMessages.vue';
 import ProjectMural from '@/projects/ProjectMural.vue';
 import ProjectBlessing from '@/projects/ProjectBlessing.vue';
+import ProjectCookbook from '@/projects/ProjectCookbook.vue';
 import ProjectButton from '@/projects/ProjectButton.vue';
 import ProjectTeaser from '@/projects/ProjectTeaser.vue';
 
@@ -139,6 +143,7 @@ export default {
     ProjectMessages,
     ProjectMural,
     ProjectBlessing,
+    ProjectCookbook,
     ProjectButton,
     ProjectTeaser,
   }
