@@ -33,7 +33,7 @@ const FixedAloupeeps = {
 
 export default {
   data: () => ({
-    source: 'https://vtubertools.sfo3.digitaloceanspaces.com/tribute/enna6m.json',
+    source: 'https://vtubertools.sfo3.digitaloceanspaces.com/tribute/enna2023.json',
     cards: [],
   }),
   methods: {
