@@ -58,10 +58,13 @@
       <div class="dialog">
         <div class="dialog-title">
           Enna Button
-          <span>- description TBD -</span>
+          <span>A dedicated site for a soundboard / button to play Enna's voicelines</span>
           <div class="dialog-close">
             <v-btn variant="tonal" @click="show_button = false">Close</v-btn>
           </div>
+        </div>
+        <div class="dialog-body">
+          <ProjectButton/>
         </div>
       </div>
     </v-dialog>
@@ -90,6 +93,7 @@ import plugins from './plugins';
 import ProjectMessages from '@/projects/ProjectMessages.vue';
 import ProjectMural from '@/projects/ProjectMural.vue';
 import ProjectBlessing from '@/projects/ProjectBlessing.vue';
+import ProjectButton from '@/projects/ProjectButton.vue';
 import ProjectTeaser from '@/projects/ProjectTeaser.vue';
 
 export default {
@@ -135,6 +139,7 @@ export default {
     ProjectMessages,
     ProjectMural,
     ProjectBlessing,
+    ProjectButton,
     ProjectTeaser,
   }
 }
