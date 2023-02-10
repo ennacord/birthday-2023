@@ -10,6 +10,9 @@
             <v-btn variant="tonal" @click="show_messages = false">Close</v-btn>
           </div>
         </div>
+        <div class="dialog-body">
+          <ProjectMessages/>
+        </div>
       </div>
     </v-dialog>
     <v-dialog v-model="show_mural">
@@ -74,6 +77,9 @@
 import Phaser from 'phaser';
 import scene from './scenes';
 import plugins from './plugins';
+
+import ProjectMessages from '@/projects/ProjectMessages.vue';
+
 export default {
   data() {
     return {
@@ -113,6 +119,9 @@ export default {
       },
     });
   },
+  components: {
+    ProjectMessages,
+  }
 }
 </script>
 
@@ -146,6 +155,11 @@ export default {
     .dialog-close {
       float:right;
     }
+  }
+
+  .dialog-body {
+    width:calc(100vw - 48px);
+    height:calc(100vh - 108px);
   }
 }
 </style>
