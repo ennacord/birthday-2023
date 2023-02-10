@@ -33,10 +33,13 @@
       <div class="dialog">
         <div class="dialog-title">
           Blessing Music Video
-          <span>- description TBD -</span>
+          <span>Aloupeeps sing to give Enna some blessings for her birthday!</span>
           <div class="dialog-close">
             <v-btn variant="tonal" @click="show_blessing = false">Close</v-btn>
           </div>
+        </div>
+        <div class="dialog-body">
+          <ProjectBlessing/>
         </div>
       </div>
     </v-dialog>
@@ -83,6 +86,7 @@ import plugins from './plugins';
 
 import ProjectMessages from '@/projects/ProjectMessages.vue';
 import ProjectMural from '@/projects/ProjectMural.vue';
+import ProjectBlessing from '@/projects/ProjectBlessing.vue';
 
 export default {
   data() {
@@ -126,6 +130,7 @@ export default {
   components: {
     ProjectMessages,
     ProjectMural,
+    ProjectBlessing,
   }
 }
 </script>
