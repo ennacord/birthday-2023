@@ -69,10 +69,13 @@
       <div class="dialog">
         <div class="dialog-title">
           Teaser: Lucie's Labyrinth
-          <span>- description TBD -</span>
+          <span>An upcoming game around Ethyria members</span>
           <div class="dialog-close">
             <v-btn variant="tonal" @click="show_vnteaser = false">Close</v-btn>
           </div>
+        </div>
+        <div class="dialog-body">
+          <ProjectTeaser/>
         </div>
       </div>
     </v-dialog>
@@ -87,6 +90,7 @@ import plugins from './plugins';
 import ProjectMessages from '@/projects/ProjectMessages.vue';
 import ProjectMural from '@/projects/ProjectMural.vue';
 import ProjectBlessing from '@/projects/ProjectBlessing.vue';
+import ProjectTeaser from '@/projects/ProjectTeaser.vue';
 
 export default {
   data() {
@@ -131,6 +135,7 @@ export default {
     ProjectMessages,
     ProjectMural,
     ProjectBlessing,
+    ProjectTeaser,
   }
 }
 </script>
