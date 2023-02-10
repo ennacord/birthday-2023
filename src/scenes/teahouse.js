@@ -54,28 +54,28 @@ class TeaHouseScene extends Phaser.Scene {
     // Movable layers for parallax
     this.movables = [
       {
-        origin: [width * 0.5, height * 0.6],
+        origin: [width * 0.5, height * 0.63],
         obj: this.add.container(0, 0, [
           this.add.image(0, 0, 'cloud3').setScale(0.5),
         ]),
         str: 1.6,
       },
       {
-        origin: [width * 0.5, height * 0.6],
+        origin: [width * 0.5, height * 0.63],
         obj: this.add.container(0, 0, [
           this.add.image(0, 0, 'cloud2').setScale(0.5),
         ]),
         str: 1.2,
       },
       {
-        origin: [width * 0.5, height * 0.6],
+        origin: [width * 0.5, height * 0.63],
         obj: this.add.container(0, 0, [
           this.add.image(0, 0, 'cloud1').setScale(0.5),
         ]),
         str: 0.8,
       },
       {
-        origin: [width * 0.5, height * 1.12],
+        origin: [width * 0.5, height * 1.125],
         obj: this.add.container(0, 0, [
           this.bgitems = this.add.spine(0, 0, 'bgitems').setScale(0.49),
         ]),
