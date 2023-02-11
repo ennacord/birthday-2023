@@ -12,6 +12,9 @@ import SpineTwerkpeepAtlas from '../assets/spine/twerkpeep.atlas?url';
 import SpineBgitemsJson from '../assets/spine/bgitems.json';
 import SpineBgitemsAtlas from '../assets/spine/bgitems.atlas?url';
 
+import AtlasParticlesPng from '../assets/atlas/particles.png';
+import AtlasParticlesJson from '../assets/atlas/particles.json?url';
+
 import ImageCloud1 from '../assets/frames/cloud1.png';
 import ImageCloud2 from '../assets/frames/cloud2.png';
 import ImageCloud3 from '../assets/frames/cloud3.png';
@@ -39,6 +42,8 @@ class IndexScene extends Phaser.Scene {
     this.load.spine('menupeep', SpineMenupeepJson, [SpineMenupeepAtlas], true);
     this.load.spine('twerkpeep', SpineTwerkpeepJson, [SpineTwerkpeepAtlas], true);
     this.load.spine('bgitems', SpineBgitemsJson, [SpineBgitemsAtlas], true);
+
+    this.load.atlas('particles', AtlasParticlesPng, AtlasParticlesJson);
 
     this.load.image('cloud1', ImageCloud1);
     this.load.image('cloud2', ImageCloud2);

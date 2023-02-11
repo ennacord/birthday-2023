@@ -6,9 +6,9 @@ class TeaHouseScene extends Phaser.Scene {
     const centerX = width * 0.5;
     const centerY = height * 0.5;
 
-    const background = this.add.graphics();
-    background.fillGradientStyle(0xcee0ed, 0xcee0ed, 0xffffff, 0xffffff);
-    background.fillRect(0, 0, width, height);
+    this.background = this.add.graphics();
+    this.background.fillGradientStyle(0xcee0ed, 0xcee0ed, 0xffffff, 0xffffff);
+    this.background.fillRect(0, 0, width, height);
 
     this.cameras.main.fadeIn(2000, 255, 247, 249);
 
@@ -52,26 +52,29 @@ class TeaHouseScene extends Phaser.Scene {
       },
     };
 
+    // Fireworks Particles
+    this.fireworks = this.add.particles('particles'); // .setDepth(1000);
+
     // Movable layers for parallax
     this.movables = [
       {
         origin: [width * 0.5, height * 0.63],
         obj: this.add.container(0, 0, [
-          this.add.image(0, 0, 'cloud3').setScale(0.5),
+          this.cloud3 = this.add.image(0, 0, 'cloud3').setScale(0.5),
         ]),
         str: 1.6,
       },
       {
         origin: [width * 0.5, height * 0.63],
         obj: this.add.container(0, 0, [
-          this.add.image(0, 0, 'cloud2').setScale(0.5),
+          this.cloud2 = this.add.image(0, 0, 'cloud2').setScale(0.5),
         ]),
         str: 1.2,
       },
       {
         origin: [width * 0.5, height * 0.63],
         obj: this.add.container(0, 0, [
-          this.add.image(0, 0, 'cloud1').setScale(0.5),
+          this.cloud1 = this.add.image(0, 0, 'cloud1').setScale(0.5),
         ]),
         str: 0.8,
       },
@@ -306,6 +309,31 @@ class TeaHouseScene extends Phaser.Scene {
       callback: () => {
         this.enna.clearTrack(0);
         this.enna.addAnimation(0, 'Enna_wish', true);
+      },
+    });
+    // Sky change
+    const { width, height } = this.game.canvas;
+    this.background.fillGradientStyle(0x8093bf, 0x8093bf, 0x2f467c, 0x2f467c);
+    this.background.fillRect(0, 0, width, height);
+    this.cloud1.setTint(0xa5b6dd);
+    this.cloud2.setTint(0xa5b6dd);
+    this.cloud3.setTint(0xa5b6dd);
+    // Fireworks
+    this.time.addEvent({
+      delay: 500,
+      loop: -1,
+      callback: () => {
+        this.fireworks.createEmitter({
+          frame: ['orange', 'gold', 'red', 'silver'],
+          x: Math.random() * width,
+          y: Math.random() * 500,
+          scale: { min: 0.2, max: 0.4 },
+          alpha: { start: 1, end: 0 },
+          lifespan: 1200,
+          speed: { min: -300, max: 300 },
+          blendMode: 'ADD',
+          gravityY: 200,
+        }).explode(20);
       },
     });
   }
