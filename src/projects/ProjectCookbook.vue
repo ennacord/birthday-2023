@@ -5,15 +5,17 @@
     <v-carousel-item :src="Cookbook03" contain ></v-carousel-item>
     <v-carousel-item :src="Cookbook04" contain ></v-carousel-item>
     <v-carousel-item :src="Cookbook05" contain ></v-carousel-item>
+    <v-carousel-item :src="Cookbook06" contain ></v-carousel-item>
   </v-carousel>
 </template>
 
 <script>
-import Cookbook01 from '@/assets/mural.jpg';
-import Cookbook02 from '@/assets/mural.jpg';
-import Cookbook03 from '@/assets/mural.jpg';
-import Cookbook04 from '@/assets/mural.jpg';
-import Cookbook05 from '@/assets/mural.jpg';
+import Cookbook01 from '@/assets/cookbook/cb1.png';
+import Cookbook02 from '@/assets/cookbook/cb2.png';
+import Cookbook03 from '@/assets/cookbook/cb3.png';
+import Cookbook04 from '@/assets/cookbook/cb4.png';
+import Cookbook05 from '@/assets/cookbook/cb5.png';
+import Cookbook06 from '@/assets/cookbook/cb6.png';
 
 export default {
   data() {
@@ -23,6 +25,7 @@ export default {
       Cookbook03,
       Cookbook04,
       Cookbook05,
+      Cookbook06,
     }
   },
   mounted() {
