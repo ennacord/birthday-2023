@@ -99,14 +99,21 @@ class TeaHouseScene extends Phaser.Scene {
       {
         origin: [0, 0],
         obj: this.add.container(0, 0, [
-          this.add.image(515, 330, 'tray').setScale(0.82).setOrigin(0, 0),
+          this.objCake = this.add.image(-100, 400, 'cake').setScale(0.82).setOrigin(0, 0).setAlpha(0),
         ]),
         str: -0.15,
       },
       {
         origin: [0, 0],
         obj: this.add.container(0, 0, [
-          this.add.image(815, 705, 'pot').setScale(0.7).setOrigin(0, 0),
+          this.objTray = this.add.image(515, 330, 'tray').setScale(0.82).setOrigin(0, 0),
+        ]),
+        str: -0.15,
+      },
+      {
+        origin: [0, 0],
+        obj: this.add.container(0, 0, [
+          this.objPot = this.add.image(815, 705, 'pot').setScale(0.7).setOrigin(0, 0),
         ]),
         str: -0.18,
       },
@@ -141,6 +148,7 @@ class TeaHouseScene extends Phaser.Scene {
                   // Secret Event
                   hit.setInteractive({ useHandCursor: true }).on('pointerup', () => {
                     if (!this.tasks[key].unlocked) return;
+                    if (this.tasks[key].cleared) return;
                     this.tasks[key].cleared = true;
                     this.secretEvent();
                   });
@@ -274,7 +282,32 @@ class TeaHouseScene extends Phaser.Scene {
 
   secretEvent() {
     this.menupeepLand();
-    
+    // Remove tray and teapot
+    this.add.tween({
+      targets: [this.objTray, this.objPot],
+      duration: 1000,
+      x: -1000,
+      alpha: { from: 1, to: 0 },
+      ease: 'Back.easeIn',
+    });
+    // Slide in cake
+    this.add.tween({
+      targets: [this.objCake],
+      duration: 3000,
+      x: { from: -1000, to: 480 },
+      alpha: { from: 0, to: 1 },
+      delay: 1500,
+      ease: 'Circ.easeOut',
+    });
+    // Enna animation change
+    this.time.addEvent({
+      delay: 5500,
+      loop: false,
+      callback: () => {
+        this.enna.clearTrack(0);
+        this.enna.addAnimation(0, 'Enna_wish', true);
+      },
+    });
   }
 }
 
