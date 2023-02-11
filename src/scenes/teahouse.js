@@ -48,6 +48,7 @@ class TeaHouseScene extends Phaser.Scene {
         text: 'Secret Event',
         cleared: false,
         tick: null,
+        unlocked: false,
       },
     };
 
@@ -119,7 +120,8 @@ class TeaHouseScene extends Phaser.Scene {
                 let hit;
                 const entry = this.add.container(0, 40 * i, [
                   hit = this.add.rectangle(0, 0, 190, 39, 0xff0000, 0).setOrigin(0, 0),
-                  this.add.text(35, 0, text, { fontFamily: 'Pacifico', fontSize: 24, color: '#6b40a5' }),
+                  this.tasks[key].text = this.add
+                    .text(35, 0, text, { fontFamily: 'Pacifico', fontSize: 24, color: '#6b40a5' }),
                   this.tasks[key].tick = this.add
                     .text(-5, -10, '✓', { fontFamily: 'Arial', fontSize: 50, color: '#33aa33' })
                     .setVisible(false),
@@ -130,6 +132,17 @@ class TeaHouseScene extends Phaser.Scene {
                     this.tasks[key].tick.setVisible(true);
                     this.game.vue.onProject({ key });
                     this.menupeepLand();
+                    this.checkQuestCompletion();
+                  });
+                } else {
+                  // Cake
+                  this.tasks[key].tick.setPosition(-5, 5).setFontSize(24).setText('🔒').setVisible(true);
+                  this.tasks[key].text.setColor('#881a1a').setAlpha(0.5);
+                  // Secret Event
+                  hit.setInteractive({ useHandCursor: true }).on('pointerup', () => {
+                    if (!this.tasks[key].unlocked) return;
+                    this.tasks[key].cleared = true;
+                    this.secretEvent();
                   });
                 }
                 return entry;
@@ -240,6 +253,28 @@ class TeaHouseScene extends Phaser.Scene {
         this.menuPeepTrn = false;
       },
     });
+  }
+
+  checkQuestCompletion() {
+    const allDone = Object.entries(this.tasks)
+      .filter(([c]) => c !== 'cake')
+      .reduce((c, [, {cleared}]) => c && cleared, true);
+    if (allDone) {
+      this.tasks.cake.unlocked = true;
+      this.tasks.cake.tick
+        .setPosition(0, 0)
+        .setFontSize(30)
+        .setFontStyle('bold')
+        .setText('☆')
+        .setColor('#336699')
+        .setVisible(true);
+      this.tasks.cake.text.setColor('#336699').setAlpha(1);
+    }
+  }
+
+  secretEvent() {
+    this.menupeepLand();
+    
   }
 }
 
