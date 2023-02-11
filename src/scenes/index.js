@@ -18,6 +18,7 @@ import ImageCloud3 from '../assets/frames/cloud3.png';
 import ImageCake from '../assets/frames/cake.png';
 import ImagePot from '../assets/frames/pot.png';
 import ImageTray from '../assets/frames/tray.png';
+import ImageCursor from '../assets/images/cursor.png';
 
 class IndexScene extends Phaser.Scene {
   preload() {
@@ -52,6 +53,9 @@ class IndexScene extends Phaser.Scene {
   }
 
   create() {
+    // Cursor
+    this.input.setDefaultCursor(`url(${ImageCursor}), auto`);
+  
     this.scene.start('splash');
   }
 }
