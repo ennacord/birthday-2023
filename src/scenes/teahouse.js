@@ -53,7 +53,8 @@ class TeaHouseScene extends Phaser.Scene {
     };
 
     // Fireworks Particles
-    this.fireworks = this.add.particles('particles'); // .setDepth(1000);
+    this.fireworks = this.add.particles('particles');
+    this.confetti = this.add.particles('confetti').setDepth(1000);
 
     // Movable layers for parallax
     this.movables = [
@@ -335,6 +336,18 @@ class TeaHouseScene extends Phaser.Scene {
           gravityY: 200,
         }).explode(20);
       },
+    });
+    // Confetti
+    this.confetti.createEmitter({
+      frame: ['1', '2', '3', '4', '5', '6', '7', '8'],
+      x: { min: 0, max: 1920 },
+      y: { min: -300, max: -30 },
+      scale: 0.4,
+      gravityX: -3,
+      gravityY: 50,
+      frequency: 100,
+      lifespan: 7000,
+      speed: { min: 3, max: 15 },
     });
   }
 }

@@ -14,6 +14,8 @@ import SpineBgitemsAtlas from '../assets/spine/bgitems.atlas?url';
 
 import AtlasParticlesPng from '../assets/atlas/particles.png';
 import AtlasParticlesJson from '../assets/atlas/particles.json?url';
+import AtlasConfettiPng from '../assets/atlas/confetti.png';
+import AtlasConfettiJson from '../assets/atlas/confetti.json?url';
 
 import ImageCloud1 from '../assets/frames/cloud1.png';
 import ImageCloud2 from '../assets/frames/cloud2.png';
@@ -44,6 +46,7 @@ class IndexScene extends Phaser.Scene {
     this.load.spine('bgitems', SpineBgitemsJson, [SpineBgitemsAtlas], true);
 
     this.load.atlas('particles', AtlasParticlesPng, AtlasParticlesJson);
+    this.load.atlas('confetti', AtlasConfettiPng, AtlasConfettiJson);
 
     this.load.image('cloud1', ImageCloud1);
     this.load.image('cloud2', ImageCloud2);
