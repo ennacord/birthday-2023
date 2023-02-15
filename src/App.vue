@@ -85,6 +85,19 @@
         </div>
       </div>
     </v-dialog>
+    <v-dialog v-model="show_credits">
+      <div class="dialog credits">
+        <div class="dialog-title">
+          Website Credits
+          <div class="dialog-close">
+            <v-btn variant="tonal" @click="show_credits = false">Close</v-btn>
+          </div>
+        </div>
+        <div class="dialog-body">
+          <ProjectCredits/>
+        </div>
+      </div>
+    </v-dialog>
   </div>
 </template>
 
@@ -99,6 +112,7 @@ import ProjectCookbook from '@/projects/ProjectCookbook.vue';
 import ProjectBlessing from '@/projects/ProjectBlessing.vue';
 import ProjectHeaven from '@/projects/ProjectHeaven.vue';
 import ProjectButton from '@/projects/ProjectButton.vue';
+import ProjectCredits from '@/projects/ProjectCredits.vue';
 
 export default {
   data() {
@@ -110,6 +124,7 @@ export default {
       show_blessing: false,
       show_heaven: false,
       show_button: false,
+      show_credits: false,
     }
   },
   methods: {
@@ -146,6 +161,7 @@ export default {
     ProjectBlessing,
     ProjectHeaven,
     ProjectButton,
+    ProjectCredits,
   }
 }
 </script>
@@ -159,6 +175,12 @@ export default {
   border-radius: 12px;
   overflow:hidden;
   border:3px solid #563880;
+
+  &.credits {
+    width:500px;
+    min-width:500px;
+    height:300px;
+  }
 
   .dialog-title {
     height:60px;

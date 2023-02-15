@@ -211,6 +211,11 @@ class TeaHouseScene extends Phaser.Scene {
     this.bgitems.addAnimation(0, 'animation', true);
     this.enna.addAnimation(0, 'Enna_idle', true);
 
+    // Cedits
+    this.twekpeep.setInteractive({ useHandCursor: true }).on('pointerup', () => {
+      this.game.vue.onProject({ key: 'credits' });
+    });
+
     // Menu Peep Animations
     // 0 MenuPeep_blink
     // 0 MenuPeep_blinkSmile
