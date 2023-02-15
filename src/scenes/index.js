@@ -17,12 +17,12 @@ import AtlasParticlesJson from '../assets/atlas/particles.json?url';
 import AtlasConfettiPng from '../assets/atlas/confetti.png';
 import AtlasConfettiJson from '../assets/atlas/confetti.json?url';
 
-import ImageCloud1 from '../assets/frames/cloud1.png';
-import ImageCloud2 from '../assets/frames/cloud2.png';
-import ImageCloud3 from '../assets/frames/cloud3.png';
-import ImageCake from '../assets/frames/cake.png';
-import ImagePot from '../assets/frames/pot.png';
-import ImageTray from '../assets/frames/tray.png';
+import ImageCloud1 from '../assets/images/cloud1.png';
+import ImageCloud2 from '../assets/images/cloud2.png';
+import ImageCloud3 from '../assets/images/cloud3.png';
+import ImageCake from '../assets/images/cake.png';
+import ImagePot from '../assets/images/pot.png';
+import ImageTray from '../assets/images/tray.png';
 import ImageCursor from '../assets/images/cursor.png';
 
 class IndexScene extends Phaser.Scene {
