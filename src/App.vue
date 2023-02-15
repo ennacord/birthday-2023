@@ -71,17 +71,17 @@
         </div>
       </div>
     </v-dialog>
-    <v-dialog v-model="show_vnteaser">
+    <v-dialog v-model="show_heaven">
       <div class="dialog">
         <div class="dialog-title">
-          Teaser: Lucie's Labyrinth
-          <span>An upcoming game around Ethyria members</span>
+          Heaven Bird Waltz
+          <span>Oh heavens, it's a bird dancing to a waltz melody!</span>
           <div class="dialog-close">
-            <v-btn variant="tonal" @click="show_vnteaser = false">Close</v-btn>
+            <v-btn variant="tonal" @click="show_heaven = false">Close</v-btn>
           </div>
         </div>
         <div class="dialog-body">
-          <ProjectTeaser/>
+          <ProjectHeaven/>
         </div>
       </div>
     </v-dialog>
@@ -98,7 +98,7 @@ import ProjectMural from '@/projects/ProjectMural.vue';
 import ProjectBlessing from '@/projects/ProjectBlessing.vue';
 import ProjectCookbook from '@/projects/ProjectCookbook.vue';
 import ProjectButton from '@/projects/ProjectButton.vue';
-import ProjectTeaser from '@/projects/ProjectTeaser.vue';
+import ProjectHeaven from '@/projects/ProjectHeaven.vue';
 
 export default {
   data() {
@@ -109,7 +109,7 @@ export default {
       show_blessing: false,
       show_cookbook: false,
       show_button: false,
-      show_vnteaser: false,
+      show_heaven: false,
     }
   },
   methods: {
@@ -145,7 +145,7 @@ export default {
     ProjectBlessing,
     ProjectCookbook,
     ProjectButton,
-    ProjectTeaser,
+    ProjectHeaven,
   }
 }
 </script>

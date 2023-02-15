@@ -24,18 +24,18 @@ class TeaHouseScene extends Phaser.Scene {
         cleared: false,
         tick: null,
       },
-      blessing: {
-        text: 'Blessing MV',
-        cleared: false,
-        tick: null,
-      },
       cookbook: {
         text: 'Cookbook',
         cleared: false,
         tick: null,
       },
-      vnteaser: {
-        text: 'VN Teaser',
+      blessing: {
+        text: 'Blessing MV',
+        cleared: false,
+        tick: null,
+      },
+      heaven: {
+        text: 'Waltz MV',
         cleared: false,
         tick: null,
       },
