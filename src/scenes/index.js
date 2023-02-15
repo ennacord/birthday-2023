@@ -26,6 +26,10 @@ import ImageTray from '../assets/images/tray.png';
 import ImageCursor from '../assets/images/cursor.png';
 import ImageLogo from '../assets/images/logo.png';
 
+import AudioBgm from '../assets/audio/bgm.mp3';
+import AudioSelect from '../assets/audio/select.mp3';
+import AudioTouch from '../assets/audio/touch.mp3';
+
 class IndexScene extends Phaser.Scene {
   preload() {
     const { width, height } = this.game.canvas;
@@ -56,6 +60,10 @@ class IndexScene extends Phaser.Scene {
     this.load.image('pot', ImagePot);
     this.load.image('tray', ImageTray);
     this.load.image('logo', ImageLogo);
+
+    this.load.audio('bgm', AudioBgm);
+    this.load.audio('select', AudioSelect);
+    this.load.audio('touch', AudioTouch);
 
     // Scenes
     this.scene.add('splash', SplashScene);

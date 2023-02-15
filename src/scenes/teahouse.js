@@ -10,6 +10,9 @@ class TeaHouseScene extends Phaser.Scene {
     this.background.fillGradientStyle(0xcee0ed, 0xcee0ed, 0xffffff, 0xffffff);
     this.background.fillRect(0, 0, width, height);
 
+    this.sound.add('bgm', { volume: 0.4, loop: true }).play();
+    this.sound.play('touch');
+
     this.cameras.main.fadeIn(2000, 255, 247, 249);
 
     // Tasks
@@ -144,6 +147,7 @@ class TeaHouseScene extends Phaser.Scene {
                 ]);
                 if (key !== 'cake') {
                   hit.setInteractive({ useHandCursor: true }).on('pointerup', () => {
+                    this.sound.play('select');
                     this.tasks[key].cleared = true;
                     this.tasks[key].tick.setVisible(true);
                     this.game.vue.onProject({ key });
