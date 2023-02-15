@@ -175,6 +175,9 @@ class TeaHouseScene extends Phaser.Scene {
       },
     ];
 
+    // Logo
+    this.add.image(1600, 230, 'logo').setScale(0.6);
+
     // Initial positions
     const { x: px, y: py } = this.input;
     this.movables.forEach(({ origin, obj, str }) => {

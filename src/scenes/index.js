@@ -24,6 +24,7 @@ import ImageCake from '../assets/images/cake.png';
 import ImagePot from '../assets/images/pot.png';
 import ImageTray from '../assets/images/tray.png';
 import ImageCursor from '../assets/images/cursor.png';
+import ImageLogo from '../assets/images/logo.png';
 
 class IndexScene extends Phaser.Scene {
   preload() {
@@ -54,6 +55,7 @@ class IndexScene extends Phaser.Scene {
     this.load.image('cake', ImageCake);
     this.load.image('pot', ImagePot);
     this.load.image('tray', ImageTray);
+    this.load.image('logo', ImageLogo);
 
     // Scenes
     this.scene.add('splash', SplashScene);
