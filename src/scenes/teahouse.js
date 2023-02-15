@@ -82,6 +82,9 @@ class TeaHouseScene extends Phaser.Scene {
       {
         origin: [width * 0.5, height * 1.125],
         obj: this.add.container(0, 0, [
+          this.add.rectangle((-width * 0.5), (-height * 1.125) - 100, 1920, 160, 0xefebf5).setOrigin(0, 0),
+          // this.add.rectangle((-width * 0.5), (-height * 1.125) - 100, 1920, 160, 0xf4f5fe).setOrigin(0, 0),
+          // this.add.rectangle((-width * 0.5), (-height * 1.125) - 100, 1920, 160, 0xff0000, 0.5).setOrigin(0, 0),
           this.bgitems = this.add.spine(0, 0, 'bgitems').setScale(0.49),
         ]),
         str: 0.3,
@@ -89,7 +92,9 @@ class TeaHouseScene extends Phaser.Scene {
       {
         origin: [(width * 0.5) + 60, (height * 1.11) + 20],
         obj: this.add.container(0, 0, [
+          this.add.rectangle((-width * 0.5) + 1470, (-height * 1.11) + 773, 20, 200, 0xd3d1ff).setOrigin(0, 0),
           this.enna = this.add.spine(0, 0, 'enna').setScale(0.51),
+          // this.add.rectangle((-width * 0.5) + 1470, (-height * 1.11) + 773, 20, 200, 0xff0000, 0.5).setOrigin(0, 0),
         ]),
         str: -0.1,
       },
