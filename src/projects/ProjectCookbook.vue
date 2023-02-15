@@ -1,12 +1,21 @@
 <template>
-  <v-carousel height="100%" hide-delimiters progress>
-    <v-carousel-item :src="Cookbook01" contain ></v-carousel-item>
-    <v-carousel-item :src="Cookbook02" contain ></v-carousel-item>
-    <v-carousel-item :src="Cookbook03" contain ></v-carousel-item>
-    <v-carousel-item :src="Cookbook04" contain ></v-carousel-item>
-    <v-carousel-item :src="Cookbook05" contain ></v-carousel-item>
-    <v-carousel-item :src="Cookbook06" contain ></v-carousel-item>
-  </v-carousel>
+  <v-row no-gutters style="height:100%;">
+    <v-col cols="3">
+      <div class="py-2 px-4">
+        credits
+      </div>
+    </v-col>
+    <v-col cols="9" style="background:#1a1a1a; height:100%;">
+      <v-carousel height="100%" hide-delimiters progress>
+        <v-carousel-item :src="Cookbook01" contain ></v-carousel-item>
+        <v-carousel-item :src="Cookbook02" contain ></v-carousel-item>
+        <v-carousel-item :src="Cookbook03" contain ></v-carousel-item>
+        <v-carousel-item :src="Cookbook04" contain ></v-carousel-item>
+        <v-carousel-item :src="Cookbook05" contain ></v-carousel-item>
+        <v-carousel-item :src="Cookbook06" contain ></v-carousel-item>
+      </v-carousel>
+    </v-col>
+  </v-row>
 </template>
 
 <script>
