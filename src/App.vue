@@ -18,8 +18,8 @@
     <v-dialog v-model="show_mural">
       <div class="dialog">
         <div class="dialog-title">
-          Drawing Board
-          <span>Some aloupeeps drew their greetings on a shared community board!</span>
+          Drawing Boards
+          <span>Some aloupeeps drew their greetings on three shared community boards!</span>
           <div class="dialog-close">
             <v-btn variant="tonal" @click="show_mural = false">Close</v-btn>
           </div>

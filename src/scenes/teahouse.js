@@ -23,7 +23,7 @@ class TeaHouseScene extends Phaser.Scene {
         tick: null,
       },
       mural: {
-        text: 'Mural',
+        text: 'Drawings',
         cleared: false,
         tick: null,
       },
