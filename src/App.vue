@@ -29,20 +29,6 @@
         </div>
       </div>
     </v-dialog>
-    <v-dialog v-model="show_blessing">
-      <div class="dialog">
-        <div class="dialog-title">
-          Blessing Music Video
-          <span>Aloupeeps sing to give Enna some blessings for her birthday!</span>
-          <div class="dialog-close">
-            <v-btn variant="tonal" @click="show_blessing = false">Close</v-btn>
-          </div>
-        </div>
-        <div class="dialog-body">
-          <ProjectBlessing/>
-        </div>
-      </div>
-    </v-dialog>
     <v-dialog v-model="show_cookbook">
       <div class="dialog">
         <div class="dialog-title">
@@ -57,17 +43,17 @@
         </div>
       </div>
     </v-dialog>
-    <v-dialog v-model="show_button">
+    <v-dialog v-model="show_blessing">
       <div class="dialog">
         <div class="dialog-title">
-          Websites
-          <span>Dedicated websites and external links prepared by aloupeeps</span>
+          Blessing Music Video
+          <span>Aloupeeps sing to give Enna some blessings for her birthday!</span>
           <div class="dialog-close">
-            <v-btn variant="tonal" @click="show_button = false">Close</v-btn>
+            <v-btn variant="tonal" @click="show_blessing = false">Close</v-btn>
           </div>
         </div>
         <div class="dialog-body">
-          <ProjectButton/>
+          <ProjectBlessing/>
         </div>
       </div>
     </v-dialog>
@@ -85,6 +71,20 @@
         </div>
       </div>
     </v-dialog>
+    <v-dialog v-model="show_button">
+      <div class="dialog">
+        <div class="dialog-title">
+          Websites
+          <span>Dedicated websites and external links prepared by aloupeeps</span>
+          <div class="dialog-close">
+            <v-btn variant="tonal" @click="show_button = false">Close</v-btn>
+          </div>
+        </div>
+        <div class="dialog-body">
+          <ProjectButton/>
+        </div>
+      </div>
+    </v-dialog>
   </div>
 </template>
 
@@ -95,10 +95,10 @@ import plugins from './plugins';
 
 import ProjectMessages from '@/projects/ProjectMessages.vue';
 import ProjectMural from '@/projects/ProjectMural.vue';
-import ProjectBlessing from '@/projects/ProjectBlessing.vue';
 import ProjectCookbook from '@/projects/ProjectCookbook.vue';
-import ProjectButton from '@/projects/ProjectButton.vue';
+import ProjectBlessing from '@/projects/ProjectBlessing.vue';
 import ProjectHeaven from '@/projects/ProjectHeaven.vue';
+import ProjectButton from '@/projects/ProjectButton.vue';
 
 export default {
   data() {
@@ -106,10 +106,10 @@ export default {
       game: null,
       show_messages: false,
       show_mural: false,
-      show_blessing: false,
       show_cookbook: false,
-      show_button: false,
+      show_blessing: false,
       show_heaven: false,
+      show_button: false,
     }
   },
   methods: {
@@ -142,10 +142,10 @@ export default {
   components: {
     ProjectMessages,
     ProjectMural,
-    ProjectBlessing,
     ProjectCookbook,
-    ProjectButton,
+    ProjectBlessing,
     ProjectHeaven,
+    ProjectButton,
   }
 }
 </script>
