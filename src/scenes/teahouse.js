@@ -34,13 +34,13 @@ class TeaHouseScene extends Phaser.Scene {
         cleared: false,
         tick: null,
       },
-      button: {
-        text: 'Enna Button',
+      vnteaser: {
+        text: 'VN Teaser',
         cleared: false,
         tick: null,
       },
-      vnteaser: {
-        text: 'VN Teaser',
+      button: {
+        text: 'Websites',
         cleared: false,
         tick: null,
       },

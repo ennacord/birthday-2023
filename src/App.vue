@@ -60,8 +60,8 @@
     <v-dialog v-model="show_button">
       <div class="dialog">
         <div class="dialog-title">
-          Enna Button
-          <span>A dedicated site for a soundboard / button to play Enna's voicelines</span>
+          Websites
+          <span>Dedicated websites and external links prepared by aloupeeps</span>
           <div class="dialog-close">
             <v-btn variant="tonal" @click="show_button = false">Close</v-btn>
           </div>
