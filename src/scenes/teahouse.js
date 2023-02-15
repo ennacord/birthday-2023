@@ -86,8 +86,6 @@ class TeaHouseScene extends Phaser.Scene {
         origin: [width * 0.5, height * 1.125],
         obj: this.add.container(0, 0, [
           this.add.rectangle((-width * 0.5), (-height * 1.125) - 100, 1920, 160, 0xefebf5).setOrigin(0, 0),
-          // this.add.rectangle((-width * 0.5), (-height * 1.125) - 100, 1920, 160, 0xf4f5fe).setOrigin(0, 0),
-          // this.add.rectangle((-width * 0.5), (-height * 1.125) - 100, 1920, 160, 0xff0000, 0.5).setOrigin(0, 0),
           this.bgitems = this.add.spine(0, 0, 'bgitems').setScale(0.49),
         ]),
         str: 0.3,
@@ -97,7 +95,6 @@ class TeaHouseScene extends Phaser.Scene {
         obj: this.add.container(0, 0, [
           this.add.rectangle((-width * 0.5) + 1470, (-height * 1.11) + 773, 20, 200, 0xd3d1ff).setOrigin(0, 0),
           this.enna = this.add.spine(0, 0, 'enna').setScale(0.51),
-          // this.add.rectangle((-width * 0.5) + 1470, (-height * 1.11) + 773, 20, 200, 0xff0000, 0.5).setOrigin(0, 0),
         ]),
         str: -0.1,
       },
@@ -216,26 +213,12 @@ class TeaHouseScene extends Phaser.Scene {
       this.game.vue.onProject({ key: 'credits' });
     });
 
-    // Menu Peep Animations
-    // 0 MenuPeep_blink
-    // 0 MenuPeep_blinkSmile
-    // 1 MenuPeep_hover
-    // 1 MenuPeep_hoverUp
+    // Menu Peep Animations and Interactions
     this.menuPeepFly = false;
     this.menuPeepTrn = false;
     this.menupeep.addAnimation(0, 'MenuPeep_blink', true);
     this.menupeep.addAnimation(1, 'MenuPeep_hover', true);
     this.menupeep.addAnimation(2, 'MenuPeep_NoMenu');
-
-    // const menuPeepHover = this.add.tween({
-    //   targets: this.menu,
-    //   y: { from: this.menu.y, to: this.menu.y - 10 },
-    //   duration: 670,
-    //   yoyo: true,
-    //   loop: -1,
-    // });
-    // menuPeepHover.pause();
-
     this.menupeep.setInteractive({ useHandCursor: true }).on('pointerdown', () => {
       if (this.menuPeepTrn) return;
       if (this.menuPeepFly) return;
@@ -243,7 +226,6 @@ class TeaHouseScene extends Phaser.Scene {
       this.menuPeepTrn = true;
       this.menupeep.clearTrack(1);
       this.menupeep.addAnimation(1, 'MenuPeep_hoverUp', true);
-      // this.menupeepLayer.str = -0.6;
       this.add.tween({
         targets: this.menupeep,
         y: { from: this.menupeep.y, to: this.menupeep.y - 270 },
@@ -256,7 +238,6 @@ class TeaHouseScene extends Phaser.Scene {
             this.menuTasks.setVisible(true);
             this.menuPeepTrn = false;
           }, 300);
-          // menuPeepHover.play().resume();
         },
       });
     });
@@ -268,7 +249,6 @@ class TeaHouseScene extends Phaser.Scene {
     this.menuTasks.setVisible(false);
     this.menupeep.clearTrack(2);
     this.menupeep.addAnimation(2, 'MenuPeep_HideMenu');
-    // menuPeepHover.pause();
     this.add.tween({
       targets: this.menupeep,
       y: { from: this.menupeep.y, to: this.menupeep.y + 270 },
@@ -278,7 +258,6 @@ class TeaHouseScene extends Phaser.Scene {
         this.menupeep.clearTrack(1);
         this.menupeep.addAnimation(1, 'MenuPeep_hover', true);
         this.menupeep.clearTrack(2);
-        // this.menupeepLayer.str = 0.1;
         this.menuPeepTrn = false;
       },
     });
