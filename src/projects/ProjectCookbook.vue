@@ -1,21 +1,23 @@
 <template>
-  <v-row no-gutters style="height:100%;">
-    <v-col cols="3">
-      <div class="py-2 px-4">
-        credits
-      </div>
-    </v-col>
-    <v-col cols="9" style="background:#1a1a1a; height:100%;">
-      <v-carousel height="100%" hide-delimiters progress>
-        <v-carousel-item :src="Cookbook01" contain ></v-carousel-item>
-        <v-carousel-item :src="Cookbook02" contain ></v-carousel-item>
-        <v-carousel-item :src="Cookbook03" contain ></v-carousel-item>
-        <v-carousel-item :src="Cookbook04" contain ></v-carousel-item>
-        <v-carousel-item :src="Cookbook05" contain ></v-carousel-item>
-        <v-carousel-item :src="Cookbook06" contain ></v-carousel-item>
-      </v-carousel>
-    </v-col>
-  </v-row>
+  <v-container class="container pa-0 ma-0">
+    <v-row no-gutters style="height:100%;">
+      <v-col cols="3">
+        <div class="py-2 px-4">
+          credits
+        </div>
+      </v-col>
+      <v-col cols="9" style="background:#1a1a1a; height:100%;">
+        <v-carousel height="100%" hide-delimiters progress>
+          <v-carousel-item :src="Cookbook01" contain ></v-carousel-item>
+          <v-carousel-item :src="Cookbook02" contain ></v-carousel-item>
+          <v-carousel-item :src="Cookbook03" contain ></v-carousel-item>
+          <v-carousel-item :src="Cookbook04" contain ></v-carousel-item>
+          <v-carousel-item :src="Cookbook05" contain ></v-carousel-item>
+          <v-carousel-item :src="Cookbook06" contain ></v-carousel-item>
+        </v-carousel>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
@@ -43,5 +45,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-
+.container {
+  width:100%; height:100%; max-width:100%;
+}
 </style>

@@ -1,8 +1,8 @@
 <template>
-  <v-container>
+  <v-container class="container pa-0 ma-0">
     <v-row no-gutters>
       <v-col cols="6">
-        <v-sheet class="ma-2 pa-2">
+        <div class="pa-4 pr-2">
           <h2 class="text-center">Enna Button</h2>
           <h4 class="text-center">
             A dedicated site for a soundboard / button to play a sepcific Enna voiceline
@@ -13,12 +13,12 @@
             </a>
           </h4>
           <a href="https://bishbuttonbuild20230212.github.io" target="_blank">
-            <img :src="buttonImgUrl" class="button-img">
+            <v-img :src="buttonImgUrl" cover />
           </a>
-        </v-sheet>
+        </div>
       </v-col>
       <v-col cols="6">
-        <v-sheet class="ma-2 pa-2">
+        <div class="pa-4 pl-2">
           <h2 class="text-center">picrew</h2>
           <h4 class="text-center">
             ?
@@ -29,9 +29,9 @@
             </a>
           </h4>
           <a href="/" target="_blank">
-            <img :src="buttonImgUrl" class="button-img">
+            <v-img :src="buttonImgUrl" cover />
           </a>
-        </v-sheet>
+        </div>
       </v-col>
     </v-row>
   </v-container>
@@ -52,10 +52,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.button-img {
-  width:auto;
-  height:100%;
-  margin:0px auto;
-  display:block;
+.container {
+  width:100%; height:100%; max-width:100%;
 }
 </style>
