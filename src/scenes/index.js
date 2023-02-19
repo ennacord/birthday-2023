@@ -24,6 +24,7 @@ import ImageCake from '../assets/images/cake.png';
 import ImagePot from '../assets/images/pot.png';
 import ImageTray from '../assets/images/tray.png';
 import ImageCursor from '../assets/images/cursor.png';
+import ImagePointer from '../assets/images/pointer.png';
 import ImageLogo from '../assets/images/logo.png';
 
 import AudioBgm from '../assets/audio/bgm.mp3';
@@ -60,7 +61,7 @@ class IndexScene extends Phaser.Scene {
     this.load.image('pot', ImagePot);
     this.load.image('tray', ImageTray);
     this.load.image('logo', ImageLogo);
-    this.load.image('cursor', ImageCursor);
+    this.load.image('pointer', ImagePointer);
 
     this.load.audio('bgm', AudioBgm);
     this.load.audio('select', AudioSelect);

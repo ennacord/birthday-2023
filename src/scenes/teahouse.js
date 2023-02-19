@@ -60,8 +60,8 @@ class TeaHouseScene extends Phaser.Scene {
     this.confetti = this.add.particles('confetti').setDepth(1000);
 
     // Quest pointers
-    const pointer1 = this.add.image(300, 500, 'cursor').setScale(2).setAngle(225).setDepth(2000);
-    const pointer2 = this.add.image(1600, 530, 'cursor').setScale(2).setAngle(225).setDepth(2001);
+    const pointer1 = this.add.image(300, 500, 'pointer').setScale(0.6).setAngle(180).setDepth(2000);
+    const pointer2 = this.add.image(1600, 530, 'pointer').setScale(0.6).setAngle(180).setDepth(2001);
     this.add.tween({
       targets: [pointer1],
       y: pointer1.y - 40,
