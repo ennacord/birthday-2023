@@ -1,7 +1,10 @@
 <template>
   <div class="px-8 py-6">
     <ul class="pl-8">
-      <li><strong>Enna's Angelic Teahouse</strong> (ennacord)</li>
+      <li>
+        <strong>Enna's Angelic Teahouse</strong> -
+        <a target="_blank" class="text-decoration-none" href="https://discord.gg/enna">https://discord.gg/enna</a>
+      </li>
       <li>
         <strong>Programming</strong> -
         <a target="_blank" class="text-decoration-none" href="https://twitter.com/jetri_co">jetrico</a>
