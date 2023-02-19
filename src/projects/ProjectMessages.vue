@@ -1,6 +1,13 @@
+<script setup>
+import Tweet from "vue-tweet";
+</script>
+
 <template>
   <div class="cards-container">
     <div v-masonry="'bdaycards'" transition-duration="0.3s" item-selector=".card" stagger="0s">
+      <div v-masonry-tile class="card card-tweet">
+        <Tweet tweet-id="1627008338868436992" @tweet-load-success="redraw()"></Tweet>
+      </div>
       <div
         v-masonry-tile @click="redraw()"
         :class="[ 'card', `card-style-${item.aloupeep}`]"
@@ -88,6 +95,9 @@ export default {
       });
     })();
   },
+  components: [
+    Tweet,
+  ],
 };
 </script>
 
@@ -112,8 +122,8 @@ export default {
   background-repeat: repeat-y;
   background-size: contain;
   &.card-tweet {
-    background:none;
-    padding:0px;
+    // background:none;
+    padding:2px;
   }
   .card-aloupeep {
     width:100px;
