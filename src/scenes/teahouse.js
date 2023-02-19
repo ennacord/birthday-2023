@@ -59,6 +59,25 @@ class TeaHouseScene extends Phaser.Scene {
     this.fireworks = this.add.particles('particles');
     this.confetti = this.add.particles('confetti').setDepth(1000);
 
+    // Quest pointers
+    const pointer1 = this.add.image(300, 500, 'cursor').setScale(2).setAngle(225).setDepth(2000);
+    const pointer2 = this.add.image(1600, 530, 'cursor').setScale(2).setAngle(225).setDepth(2001);
+    this.add.tween({
+      targets: [pointer1],
+      y: pointer1.y - 40,
+      yoyo: true,
+      loop: -1,
+      duration: 800,
+    })
+    this.add.tween({
+      targets: [pointer2],
+      y: pointer2.y - 40,
+      yoyo: true,
+      loop: -1,
+      duration: 800,
+      delay: 300,
+    })
+
     // Movable layers for parallax
     this.movables = [
       {
@@ -211,6 +230,7 @@ class TeaHouseScene extends Phaser.Scene {
 
     // Cedits
     this.twekpeep.setInteractive({ useHandCursor: true }).on('pointerup', () => {
+      if (pointer2) pointer2.destroy();
       this.game.vue.onProject({ key: 'credits' });
     });
 
@@ -223,6 +243,7 @@ class TeaHouseScene extends Phaser.Scene {
     this.menupeep.setInteractive({ useHandCursor: true }).on('pointerdown', () => {
       if (this.menuPeepTrn) return;
       if (this.menuPeepFly) return;
+      if (pointer1) pointer1.destroy();
       this.menuPeepFly = true;
       this.menuPeepTrn = true;
       this.menupeep.clearTrack(1);

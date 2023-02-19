@@ -60,6 +60,7 @@ class IndexScene extends Phaser.Scene {
     this.load.image('pot', ImagePot);
     this.load.image('tray', ImageTray);
     this.load.image('logo', ImageLogo);
+    this.load.image('cursor', ImageCursor);
 
     this.load.audio('bgm', AudioBgm);
     this.load.audio('select', AudioSelect);
