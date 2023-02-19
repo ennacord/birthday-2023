@@ -177,7 +177,7 @@ export default {
   border:3px solid #563880;
 
   &.credits {
-    width:500px;
+    width:550px;
     min-width:500px;
     height:300px;
   }
