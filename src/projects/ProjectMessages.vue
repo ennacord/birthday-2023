@@ -23,6 +23,7 @@ import Tweet from "vue-tweet";
 <script>
 import axios from 'axios';
 import twemoji from 'twemoji';
+import MessageData from '@/data/messages.json?url';
 
 // 1 01, 2 02, 3 art, 4 cb, 5 fh, 6 ld, 7 ms, 8 rich, 9 slp, 10 td, 11 wave, 12 wiz
 const FixedAloupeeps = {
@@ -53,7 +54,6 @@ const FixedAloupeeps = {
 
 export default {
   data: () => ({
-    source: 'https://vtubertools.sfo3.digitaloceanspaces.com/tribute/enna2023.json',
     cards: [],
   }),
   methods: {
@@ -78,7 +78,7 @@ export default {
   mounted() {
     // Load data
     (async () => {
-      const fetchSource = await axios.get(this.source).catch(() => null);
+      const fetchSource = await axios.get(MessageData).catch(() => null);
       const data = fetchSource && fetchSource.data ? fetchSource.data : {};
       this.cards = Object.values(data.messages)
         .map((card) => ({
