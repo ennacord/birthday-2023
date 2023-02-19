@@ -179,7 +179,7 @@ export default {
   &.credits {
     width:550px;
     min-width:500px;
-    height:300px;
+    height:500px;
   }
 
   .dialog-title {
