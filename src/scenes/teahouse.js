@@ -27,16 +27,16 @@ class TeaHouseScene extends Phaser.Scene {
         cleared: false,
         tick: null,
       },
-      cookbook: {
-        text: 'Cookbook',
-        cleared: false,
-        tick: null,
-      },
-      blessing: {
-        text: 'Blessing MV',
-        cleared: false,
-        tick: null,
-      },
+      // cookbook: {
+      //   text: 'Cookbook',
+      //   cleared: false,
+      //   tick: null,
+      // },
+      // blessing: {
+      //   text: 'Blessing MV',
+      //   cleared: false,
+      //   tick: null,
+      // },
       heaven: {
         text: 'Waltz MV',
         cleared: false,
@@ -134,7 +134,8 @@ class TeaHouseScene extends Phaser.Scene {
             this.menuTasks = this.add.container(0, 0, Object.entries(this.tasks)
               .map(([key, { text }], i) => {
                 let hit;
-                const entry = this.add.container(0, 40 * i, [
+                const space = 280 / Object.keys(this.tasks).length;
+                const entry = this.add.container(0, space * i, [
                   hit = this.add.rectangle(0, 0, 190, 39, 0xff0000, 0).setOrigin(0, 0),
                   this.tasks[key].text = this.add
                     .text(35, 0, text, { fontFamily: 'Pacifico', fontSize: 24, color: '#6b40a5' }),
