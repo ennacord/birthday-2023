@@ -7,7 +7,7 @@
             <v-card-title class="text-white pb-8">
               <h2 class="text-center mb-2">Enna Bish Button</h2>
               <p class="text-center site-desc">
-                A dedicated site for a soundboard / button to play a sepcific Enna voiceline
+                A dedicated site for a soundboard / button to play a specific Enna voiceline
               </p>
               <p class="text-center site-credits">
                 Programming: Alpaka, Art: Matahari
