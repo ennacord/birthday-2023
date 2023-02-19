@@ -17,6 +17,7 @@
 import axios from 'axios';
 import twemoji from 'twemoji';
 
+// 1 01, 2 02, 3 art, 4 cb, 5 fh, 6 ld, 7 ms, 8 rich, 9 slp, 10 td, 11 wave, 12 wiz
 const FixedAloupeeps = {
   jetrico: 12,
   Zer0Pendragon6: 5,
@@ -29,7 +30,19 @@ const FixedAloupeeps = {
   Garfield: 3,
   'Frank Akanoru': 3,
   Lili: 7,
+  DarkDisasterKid: 10,
+  'Shadow Cortex': 10,
+  Nuit: 7,
+  Cirnein: 4,
+  Kyzo: 3,
+  Morirgan420: 8,
+  'Hazel Sokolov': 3,
+  Suwu: 9,
+  'Yeou Yuko': 5,
 };
+
+// kuwusaki = td ?
+// sei = ms ?
 
 export default {
   data: () => ({
@@ -111,7 +124,6 @@ export default {
     z-index:1;
     background-size:contain;
   }
-  // fh, rich, wave
   &.card-style-1 {
     .card-aloupeep {
       background-image:url('@/assets/aloupeeps/aloupeep-01.png');
