@@ -21,8 +21,6 @@ Kyzo (Kyzo#9850 )
 
 Outfit design
 Moka (Moka#6943)
-Just include the names
-the brackets are discord tags
 
 Quality Check
 Norenche
