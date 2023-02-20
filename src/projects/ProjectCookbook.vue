@@ -23,6 +23,12 @@ Outfit design
 Moka (Moka#6943)
 Just include the names
 the brackets are discord tags
+
+Quality Check
+Norenche
+
+Project Manager
+Matahari
 </pre>
         </div>
       </v-col>
