@@ -5,22 +5,22 @@
         <div class="py-2 pr-0 px-4">
 <pre class="credits">
 Graphic designer: 
-Janice (Janice_XwX#5825)
+Janice
 
 Front page Artwork: 
-A.cat (A.Cat#4415)
+A.cat
 
 Enna Chibis: (2 sprites each x 3 = 6 sprites)
-Rina (novembon (rina)#2449 )
-Phantome (PhanTomE#1413)
-Trisha (Trisha#9710)
+Rina
+Phantome
+Trisha
 
 Aloupeeps Sprites: (2 sprites each x 2 = 4 sprites)
-Kawa(2KawaQV#7997)
-Kyzo (Kyzo#9850 )
+Kawa
+Kyzo
 
 Outfit design
-Moka (Moka#6943)
+Moka
 
 Quality Check
 Norenche
