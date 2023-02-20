@@ -8,6 +8,9 @@ import Tweet from "vue-tweet";
       <div v-masonry-tile class="card card-tweet">
         <Tweet tweet-id="1627008338868436992" @tweet-load-success="redraw()"></Tweet>
       </div>
+      <div v-masonry-tile class="card card-tweet">
+        <Tweet tweet-id="1627447048483250177" @tweet-load-success="redraw()"></Tweet>
+      </div>
       <div
         v-masonry-tile @click="redraw()"
         :class="[ 'card', `card-style-${item.aloupeep}`]"
