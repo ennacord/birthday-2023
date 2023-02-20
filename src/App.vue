@@ -30,9 +30,9 @@
       </div>
     </v-dialog>
     <v-dialog v-model="show_cookbook">
-      <div class="dialog">
+      <div class="dialog cookbook">
         <div class="dialog-title">
-          Cookbook
+          Cookbook Project Teaser
           <span>Aloupeeps gather their recipe into a cookbook!</span>
           <div class="dialog-close">
             <v-btn variant="tonal" @click="show_cookbook = false">Close</v-btn>
@@ -44,9 +44,9 @@
       </div>
     </v-dialog>
     <v-dialog v-model="show_blessing">
-      <div class="dialog">
+      <div class="dialog blessing">
         <div class="dialog-title">
-          Blessing Music Video
+          Blessing Project Teaser
           <span>Aloupeeps sing to give Enna some blessings for her birthday!</span>
           <div class="dialog-close">
             <v-btn variant="tonal" @click="show_blessing = false">Close</v-btn>
@@ -176,11 +176,18 @@ export default {
   overflow:hidden;
   border:3px solid #563880;
 
+  // &.cookbook {
+  //   max-width:1400px;
+  // }
+  // &.blessing {
+  //   max-width:1000px;
+  // }
   &.credits {
     width:550px;
     min-width:500px;
     height:450px;
   }
+  
 
   .dialog-title {
     height:60px;

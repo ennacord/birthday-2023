@@ -1,28 +1,16 @@
 <template>
-  <v-container class="container pa-0 ma-0">
-    <v-row no-gutters style="height:100%;">
-      <v-col cols="3">
-        <div class="py-2 px-4">
-          credits
-        </div>
-      </v-col>
-      <v-col cols="9">
-        <iframe
-          width="100%" height="100%"
-          src="https://www.youtube-nocookie.com/embed/W8aBDsSNmWI"
-          frameborder="0"
-          allow="accelerometer; autoplay; encrypted-media; web-share" 
-          allowfullscreen>
-        </iframe>
-      </v-col>
-    </v-row>
-  </v-container>
+  <div class="container">
+    <v-img :src="TeasertImg" class="teaser-img" height="100%" />
+  </div>
 </template>
 
 <script>
+import TeasertImg from '@/assets/teaser/blessing.png';
+
 export default {
   data() {
     return {
+      TeasertImg,
     }
   },
   mounted() {
@@ -32,6 +20,13 @@ export default {
 
 <style lang="scss" scoped>
 .container {
-  width:100%; height:100%; max-width:100%;
+  width:100%;
+  height:100%;
+  background:#1a1a1a;
+
+  .teaser-img {
+    max-width:100%;
+    max-height:100%;
+  }
 }
 </style>
